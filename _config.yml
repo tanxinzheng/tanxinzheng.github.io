@@ -93,12 +93,12 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-indigo
+theme: indigo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: https://github.com/tanxinzheng/tanxinzheng.github.io
-  branch: gh-pages
+  branch: master
   message: deploy blog
