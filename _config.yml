@@ -98,4 +98,7 @@ theme: hexo-indigo
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/tanxinzheng/tanxinzheng.github.io
+  branch: gh-pages
+  message: deploy blog
