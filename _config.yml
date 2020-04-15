@@ -100,5 +100,5 @@ theme: indigo
 deploy:
   type: git
   repo: https://github.com/tanxinzheng/tanxinzheng.github.io
-  branch: master
+  branch: gh-pages
   message: deploy blog
