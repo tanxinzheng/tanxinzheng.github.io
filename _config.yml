@@ -96,9 +96,9 @@ ignore:
 theme: indigo
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
-# deploy:
-#   type: git
-#   repo: git@github.com:tanxinzheng/tanxinzheng.github.io.git
-#   branch: master
-#   message: deploy blog
+# Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:tanxinzheng/tanxinzheng.github.io.git
+  branch: master
+  message: deploy blog

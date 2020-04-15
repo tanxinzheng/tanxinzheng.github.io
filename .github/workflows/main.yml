@@ -16,14 +16,19 @@ jobs:
         uses: actions/setup-node@v1
         with:
           version: ${{ matrix.node_version }}
-      - name: Build and Deploy hexo
-        uses: JamesIves/github-pages-deploy-action@master
+      - name: Setup hexo
         env:
-          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: generate-source
-          BRANCH: master
-          FOLDER: public
-          BUILD_SCRIPT: npm i -g hexo && npm install && hexo generate
+          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLY_PRI }}
         run: |
+          mkdir -p ~/.ssh/
+          echo $ACTION_DEPLOY_KEY > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "tanxinzheng@139.com"
           git config --global user.name "tanxinzheng"
+          npm install hexo-cli -g
+          npm install
+      - name: Hexo deploy
+        run: |
+          hexo clean
+          hexo d
