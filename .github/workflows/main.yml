@@ -19,7 +19,7 @@ jobs:
       - name: Build and Deploy hexo
         uses: JamesIves/github-pages-deploy-action@master
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_BRANCH: generate-source
           BRANCH: master
           FOLDER: public
