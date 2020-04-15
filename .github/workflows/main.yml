@@ -18,6 +18,9 @@ jobs:
           version: ${{ matrix.node_version }}
       - name: Build and Deploy hexo
         uses: JamesIves/github-pages-deploy-action@master
+        run:|
+          git config --global user.email "tanxinzheng@139.com"
+          git config --global user.name "tanxinzheng"
         env:
           ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BASE_BRANCH: generate-source
