@@ -21,7 +21,7 @@ jobs:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLY_PRI }}
         run: |
           mkdir -p ~/.ssh/
-          echo $ACTION_DEPLOY_KEY > ~/.ssh/id_rsa
+          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           git config --global user.email "tanxinzheng@139.com"
