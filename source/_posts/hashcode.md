@@ -1,7 +1,7 @@
 ---
-title: hashCode及HashMap中的hash()函数
+title: Java【基础篇之HashMap及hashcode】
 tags: [java]
-
+categories: [java]
 ---
 ## 一、hashcode是什么
 要理解hashcode首先要理解hash表这个概念
