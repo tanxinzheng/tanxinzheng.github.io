@@ -19,8 +19,10 @@ jobs:
       - name: Setup hexo
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLY_PRI }}
+          A_TEST: 123456
         run: |
           mkdir -p ~/.ssh/
+          echo "$A_TEST"
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan github.com >> ~/.ssh/known_hosts
