@@ -1,7 +1,8 @@
 ---
 title: Spring Cloud 微服务架构全链路实践
 date: 2016-08-16 00:04:12
-tags:
+tags: [Spring, Java]
+index_img: /img/default_thumbnail.jpg
 ---
 
 Java 微服务框架选型（Dubbo 和 Spring Cloud）

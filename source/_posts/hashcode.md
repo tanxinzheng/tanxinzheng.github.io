@@ -2,6 +2,8 @@
 title: Java【基础篇之HashMap及hashcode】
 tags: [java]
 categories: [java]
+index_img: /img/default_thumbnail.jpg
+date: 2019-10-10 10:12:00
 ---
 ## 一、hashcode是什么
 要理解hashcode首先要理解hash表这个概念

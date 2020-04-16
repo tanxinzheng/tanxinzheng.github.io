@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 学习如逆水行舟，不进则退
-subtitle: '少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。'
-description: '少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。'
+title: Laughing Tan Space
+subtitle: '学无止境'
+#description: '少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。'
 keywords:
 author: Laughing Tan
 language: zh-CN
@@ -93,7 +93,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: indigo
+theme: fluid
 
 # Deployment
 # Docs: https://hexo.io/docs/deployment.html
