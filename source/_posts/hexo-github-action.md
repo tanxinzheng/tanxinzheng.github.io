@@ -1,9 +1,11 @@
 ---
 title: 基于Github Action工作流自动部署Hexo
-date: 2020-04-16 11:54:14
-tags: [Hexo, Github]
+tags:
+  - Hexo
+  - Github
 index_img: /img/default_thumbnail.jpg
-
+abbrlink: 2231850037
+date: 2020-04-16 11:54:14
 ---
 
 # Hexo搭建

@@ -1,8 +1,9 @@
 ---
 title: JVM【性能调优篇】
-tags: [Java]
+tags:
+  - Java
 index_img: /img/default_thumbnail.jpg
-
+abbrlink: 3097382278
 ---
 
 前面我们学习了整个JVM系列，最终目标的不仅仅是了解JVM的基础知识，也是为了进行JVM性能调优做准备。这篇文章带领大家学习JVM性能调优的知识。

@@ -28,7 +28,17 @@ jobs:
           git config --global user.name "tanxinzheng"
           npm install hexo-cli -g
           npm install
-      - name: Hexo deploy
+      - name: Hexo deploy To Github page
         run: |
           hexo clean
-          hexo d
+          hexo generate
+          hexo deploy
+      - uses: manyuanrong/setup-ossutil@v1.0
+        with:
+           # endpoint 可以去oss控制台上查看
+           endpoint: "oss-cn-shanghai.aliyuncs.com"
+           # 使用我们之前配置在secrets里面的accesskeys来配置ossutil
+           access-key-id: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_ID }}
+           access-key-secret: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_SECRET }}
+      - name: Deploy To OSS
+        run: ossutil cp public oss://txz-blog/ -rf

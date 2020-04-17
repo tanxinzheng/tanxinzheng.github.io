@@ -1,8 +1,11 @@
 ---
 title: Java【基础篇之HashMap及hashcode】
-tags: [java]
-categories: [java]
+tags:
+  - java
+categories:
+  - java
 index_img: /img/default_thumbnail.jpg
+abbrlink: 2936205123
 date: 2019-10-10 10:12:00
 ---
 ## 一、hashcode是什么
