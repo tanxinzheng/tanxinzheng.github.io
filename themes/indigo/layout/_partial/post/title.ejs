@@ -4,12 +4,12 @@
 
 <% if (post.link){ %>
   <h3 class="post-title" itemprop="name">
-    <a class="post-title-link" href="<%- url_for(post.link) %>" target="_blank" itemprop="url"><%- post.title %></a>
+    <a class="post-title-link" href="<%- url_for(post.link) %>index.html" target="_blank" itemprop="url"><%- post.title %></a>
   </h3>
 <% } else if (post.title){ %>
   <% if (hasLink){ %>
     <h3 class="post-title" itemprop="name">
-      <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+      <a class="post-title-link" href="<%- url_for(post.path) %>index.html"><%= post.title %></a>
     </h3>
   <% } else { %>
     <h3 class="post-title" itemprop="name">
