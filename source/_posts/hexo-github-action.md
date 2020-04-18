@@ -3,7 +3,7 @@ title: 基于Github Action工作流自动部署Hexo
 tags:
   - Hexo
   - Github
-index_img: /img/default_thumbnail.jpg
+index_img: /img/hexo-github-action.jpg
 abbrlink: 2231850037
 date: 2020-04-16 11:54:14
 ---
