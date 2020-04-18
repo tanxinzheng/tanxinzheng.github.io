@@ -29,7 +29,7 @@ fun_features: # 一些好玩的功能
   typing: # 为 subtitle 添加打字机效果
     enable: true
     typeSpeed: 70  # 打印速度，数字越大越慢
-    cursorChar: "_" # 游标字符
+    cursorChar: "" # 游标字符
     loop: false # 是否循环播放效果
   anchorjs: # 为文章内容中的标题添加锚图标
     enable: true
@@ -38,7 +38,7 @@ fun_features: # 一些好玩的功能
     visible: hover # 默认悬浮显示，可选：hover（鼠标在元素上悬浮时显示） | always（一直显示） | touch（移动端触摸显示）
     icon: "" # 可选：§ | # | ❡ 等，留空则为默认效果
   mouse_click:  # 鼠标点击动效
-    enable: false
+    enable: true
     style: values # 目前设置两个值：values（价值观词汇） | love（爱心）
 
 color:  # 主题颜色配置，不一定能每一处都生效，可能会被局部样式覆盖，这种情况建议用自定义 css 解决。配色可以在这获得启发： https://www.webdesignrankings.com/resources/lolcolors/
@@ -215,7 +215,7 @@ post:  # 部分配置同时控制自定义页面，注意备注
     content: '<img src="https://octodex.github.com/images/jetpacktocat.png" class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">' # 自定义区域，支持 HTML，可自行插入赞赏码、公众号二维码等内容
   comments:  # 评论
     enable: true  # 开启评论
-    type: utterances  # 指定使用的评论模块  available: disqus | valine | gitalk | utterances | changyan | livere  推荐 utterances
+    type: gitalk  # 指定使用的评论模块  available: disqus | valine | gitalk | utterances | changyan | livere  推荐 utterances
   image_zoom:  # 文章图片可点击放大
     enable: true  # 开启后文章默认可用，自定义页面如需使用，需在 Front-matter 中指定 `image_zoom: true`，并且图片使用该格式插入：<img src="..." zoom />
   math:  # 数学公式，开启之前需要更换 Markdown 渲染器，否则复杂公式会有兼容问题，具体请见：https://hexo.fluid-dev.com/docs/guide/##latex-数学公式
@@ -252,12 +252,13 @@ disqus:
 # You can get yout ClientID and ClientSecret from https://github.com/settings/applications/new
 # More info available at https://github.com/gitalk/gitalk#options
 gitalk:
-  clientID:                     # GitHub Application Client ID
-  clientSecret:                 # GitHub Application Client Secret
-  repo:                         # The repo to store comments
-  owner:                        # GitHub repository owner. Can be personal user or organization.
-  admin:                        # GitHub repo owner and collaborators, only these guys can initialize github issues, should be like "['admin']" or "['admin1','admin2']"
-  id: location.pathname         # The unique id of the page. Length must less than 50.
+  enable: true
+  clientID: 646b996eb5ffb5eaf34d                    # GitHub Application Client ID
+  clientSecret:  9154e13bd5869e2811b3852e07545337eb10e735               # GitHub Application Client Secret
+  repo:  tanxinzheng.github.io                       # The repo to store comments
+  owner: tanxinzheng                       # GitHub repository owner. Can be personal user or organization.
+  admin: tanxinzheng                       # GitHub repo owner and collaborators, only these guys can initialize github issues, should be like "['admin']" or "['admin1','admin2']"
+  id: tanxinzheng         # The unique id of the page. Length must less than 50.
   language: zh-CN               # Localization language key, en, zh-CN and zh-TW are currently available.
   labels: "['Gitalk']"          # GitHub issue labels.
   perPage: 15                   # Pagination size, with maximum 100.
