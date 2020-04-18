@@ -2,6 +2,7 @@
 if (theme.index.slogan.enable) {
   page.subtitle = theme.index.slogan.text || config.subtitle || ''
 }
+
 page.banner_img = theme.index.banner_img
 page.banner_img_height = theme.index.banner_img_height
 page.banner_mask_alpha = theme.index.banner_mask_alpha
@@ -19,7 +20,6 @@ page.banner_mask_alpha = theme.index.banner_mask_alpha
     <% } %>
     <div class="col-12 col-md-<%= index_img ? '8' : '12' %> mx-auto index-info">
       <a class="index-header" href="<%- post_url %>"><%= post.title %></a>
-
       <a href="<%- post_url %>" class="index-excerpt">
         <% var excerpt = '' %>
         <% if(post.excerpt) { %>

@@ -19,11 +19,11 @@ home:
 
 archive:
   title: 归档
-  subtitle: 归档
+  subtitle: 归档 - Archive
 
 tag:
   title: 标签
-  subtitle: 标签
+  subtitle: 标签 - Tags
 
 category:
   title: 分类
@@ -31,7 +31,7 @@ category:
 
 about:
   title: 关于
-  subtitle: 关于
+  subtitle: 关于 - About
 
 page404:
   title: 页面走丢啦~
@@ -39,4 +39,4 @@ page404:
 
 links:
   title: 友链
-  subtitle: 友情链接
+  subtitle: 友情链接 - Links
