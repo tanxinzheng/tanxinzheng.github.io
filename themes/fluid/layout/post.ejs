@@ -70,6 +70,12 @@ page.banner_mask_alpha = theme.post.banner_mask_alpha
               <% } %>
             </div>
 
+            <% if (page.prev || page.next){ %>
+            <% if (is_post() && theme.reward.enable){ %>
+            <%- partial('_partial/plugins/reward.ejs') %>
+            <% } %>
+            <% }%>
+
             <% if(page.comments && theme.post.comments.enable) { %>
               <!-- Comments -->
               <div class="comments" id="comments">

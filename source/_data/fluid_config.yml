@@ -95,6 +95,12 @@ aplayer:  # 音乐播放器，注意不能与 hexo-tag-aplayer 插件共用
     - { name: 'Simple Song', artist: 'Passenger', url: '/music/Simple Song.mp3', cover: '/music/Passenger.jpg' }
     - { name: 'Sketch Plane', artist: 'Cam Kelley', url: '/music/M800002kitDY3lqvHN.mp3', cover: '/music/Sketch Plane-Cam Kelley.jpg' }
 
+reward:  # 赞赏功能， 支持支付宝，微信
+  enable: true
+  text: 感谢大爷的咖啡☕️
+  alipay: /img/alipay.jpg
+  wechatpay: /img/wechatpay.jpg
+
 version:  # 版本相关
   check: true  # 每次生成检测是否为最新版本
 
