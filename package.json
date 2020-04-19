@@ -9,7 +9,7 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "4.0.0"
+    "version": "4.2.0"
   },
   "dependencies": {
     "hexo": "^4.0.0",
@@ -23,5 +23,19 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.3.2",
+    "gulp-htmlclean": "^2.7.8",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-uglify": "^2.0.1",
+    "run-sequence": "^1.2.2",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-optipng": "^7.1.0",
+    "imagemin-svgo": "^7.1.0"
   }
 }
