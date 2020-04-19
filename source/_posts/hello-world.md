@@ -40,3 +40,17 @@ $ hexo deploy
 ```
 
 More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+
+### New draft
+
+    //新建草稿
+    $ hexo new draft "new draft"
+
+    //如果你希望强行预览草稿，更改配置文件：
+    render_drafts: true
+    
+    //或者，如下方式启动server：
+    $ hexo server --drafts
+    
+    //把草稿变成文章，或者页面：
+    $ hexo publish [layout] <filename>
