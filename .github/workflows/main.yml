@@ -19,6 +19,7 @@ jobs:
       - name: Setup hexo
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         run: |
           mkdir -p ~/.ssh/
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
