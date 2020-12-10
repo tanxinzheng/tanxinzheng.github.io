@@ -19,7 +19,6 @@ jobs:
       - name: Setup hexo
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         run: |
           mkdir -p ~/.ssh/
           echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
@@ -36,6 +35,8 @@ jobs:
           gulp build
           hexo deploy
       - uses: manyuanrong/setup-ossutil@v1.0
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
            # endpoint 可以去oss控制台上查看
            endpoint: "oss-cn-shanghai.aliyuncs.com"
