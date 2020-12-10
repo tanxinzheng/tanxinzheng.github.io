@@ -202,7 +202,9 @@
 <ol>
 <li>equals方法<br>Object类中equals()方法实现如下</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object obj)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span> == obj);<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object obj)</span> </span>&#123;
+    <span class="hljs-keyword">return</span> (<span class="hljs-keyword">this</span> == obj);
+&#125;</code></pre>
 <p>通过该实现可以看出，Object类的实现采用了区分度最高的算法，即只要两个对象不是同一个对象，那么equals()一定返回false。</p>
 <p>虽然可以重写equals()方法，但是有一些注意事项；JDK中说明了实现equals()方法应该遵守的约定</p>
 <p>自反性：x.equals(x)必须返回true。<br>对称性：x.equals(y)与y.equals(x)的返回值必须相等。<br>传递性：x.equals(y)为true，y.equals(z)也为true，那么x.equals(z)必须为true。<br>一致性：如果对象x和y在equals()中使用的信息都没有改变，那么x.equals(y)值始终不变。<br>非null：x不是null，y为null，则x.equals(y)必须为false。<br>2. hashCode 方法<br>Object类中hashCode()方法的声明如下：</p>
@@ -215,7 +217,10 @@
 <p>选取equals方法中用于比较的所有域（之所以只选择equals()中使用的域，是为了保证上述原则的第1条），然后针对每个域的属性进行计算：</p>
 <p>复制代码<br>(1) 如果是boolean值，则计算f ? 1:0<br>(2) 如果是bytecharshortint,则计算(int)f<br>(3) 如果是long值，则计算(int)(f ^ (f &gt;&gt;&gt; 32))<br>(4) 如果是float值，则计算Float.floatToIntBits(f)<br>(5) 如果是double值，则计算Double.doubleToLongBits(f)，然后返回的结果是long,再用规则(3)去处理long,得到int<br>(6) 如果是对象应用，如果equals方法中采取递归调用的比较方式，那么hashCode中同样采取递归调用hashCode的方式。否则需要为这个域计算一个范式，比如当这个域的值为null的时候，那么hashCode 值为0<br>(7) 如果是数组，那么需要为每个元素当做单独的域来处理。java.util.Arrays.hashCode方法包含了8种基本类型数组和引用数组的hashCode计算，算法同上。<br>复制代码<br>最后，把每个域的散列码合并到对象的哈希码中。</p>
 <h2 id="四、HashMap中的hash-函数"><a href="#四、HashMap中的hash-函数" class="headerlink" title="四、HashMap中的hash()函数"></a>四、HashMap中的hash()函数</h2><p>HashMap中并没有直接使用KV中K原有的hash值; 在HashMap的put、get操作时也未直接使用K中原有的hash值，而使用了一个hash()方法。让我们一起看一下这个方法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">static final int hash(Object key) &#123;<br>    int h;<br>    return (key &#x3D;&#x3D; null) ? 0 : (h &#x3D; key.hashCode()) ^ (h &gt;&gt;&gt; 16);<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs plain">static final int hash(Object key) &#123;
+    int h;
+    return (key &#x3D;&#x3D; null) ? 0 : (h &#x3D; key.hashCode()) ^ (h &gt;&gt;&gt; 16);
+&#125;</code></pre>
 <p>这段代码类似作用是为了增加hashcode的随机性</p>
 <p>key.hashCode()的作用是返回键值key所属类型自带的hashcode，返回的类型是int，如果直接拿散列值作为下标访问HashMap的主数组的话，考虑到int类型值的范围[-2^31 , 2^31 -1]，虽然只要hash表映射比较松散的话，碰撞几率很小，但是映射空间太大，内存放不下，所以先做对数组的长度取模运算，得到的余数才能用来访问数组下标。</p>
 <p>hashMap源码中模运算是在这个indexFor( )函数里完成的把散列值和数组长度-1做一个”与”操作</p>

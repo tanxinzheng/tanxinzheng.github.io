@@ -213,12 +213,18 @@
 <li>授权的配置在 Zuul 中，也就是把 Zuul 当作 Resource Server，后端服务不需要进行任何处理，Zuul 中具体的实现就是AccessTokenFilter，里面的逻辑是手动解析 JWT，然后判断是否正确，以及解析出用户信息/Scope/Role，然后根据当前的请求 API，对授权 Map 中的配置进行匹配，如果匹配错误，直接抛出 401 授权错误。<br>我们目前采用的是第二种方式，这两种方式都有利有弊，关键在于自己的取舍，为什么采用第二种方式？目的就是发挥 Zuul 的作用，对外网关进行统一授权验证。</li>
 </ul>
 <p>关于授权 Map，里面存储了所有服务接口的配置，示例配置：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">private static final Map ROUTE_MAPS;<br>static &#123;<br>    ROUTE_MAPS &#x3D; new HashMap();<br>    ROUTE_MAPS.put(&quot;eureka-client&#x2F;home&quot;, &quot;read:ROLE_ADMIN&quot;);<br>    ROUTE_MAPS.put(&quot;eureka-client&#x2F;user&quot;, &quot;read:ROLE_ADMIN&quot;);<br>    ROUTE_MAPS.put(&quot;eureka-client&#x2F;error&quot;, &quot;read:ROLE_ADMIN&quot;);<br>&#125;<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs plain">private static final Map ROUTE_MAPS;
+static &#123;
+    ROUTE_MAPS &#x3D; new HashMap();
+    ROUTE_MAPS.put(&quot;eureka-client&#x2F;home&quot;, &quot;read:ROLE_ADMIN&quot;);
+    ROUTE_MAPS.put(&quot;eureka-client&#x2F;user&quot;, &quot;read:ROLE_ADMIN&quot;);
+    ROUTE_MAPS.put(&quot;eureka-client&#x2F;error&quot;, &quot;read:ROLE_ADMIN&quot;);
+&#125;</code></pre>
 
 
 <p>这是我们目前的配置，是一个静态的 Map，后面会存储在 Spring Cloud Config 配置中心，Zuul 启动时进行加载，利用 Spring Cloud Bus 动态刷新。</p>
 <p>关于 Zuul 网关，其实还有很多需要说的，后面有机会再进行针对说明。</p>
-<h1 id="Eureka-服务治理"><a href="#Eureka-服务治理" class="headerlink" title="Eureka 服务治理"></a>Eureka 服务治理</h1>{% asset_img 3.png %}
+<h1 id="Eureka-服务治理"><a href="#Eureka-服务治理" class="headerlink" title="Eureka 服务治理"></a>Eureka 服务治理</h1><img src="/posts/1879991184/index/3.png" srcset="/img/loading.gif" class="">
 
 <p>Eureka 遵循的是 AP 原则（服务可用性和分区容错性），是服务治理最理想的遵循 CAP 分布式原则。</p>
 <p>Eureka 集群中的节点是彼此平级，不像 Consul 有 master/worker 之分，集群中的 Eureka 节点彼此两两注册，所以，Eureka 集群最好部署三个节点，这也是我们目前的部署方式。</p>
@@ -228,7 +234,7 @@
 <li>Feign：基于声明式，顾名思义，就是需要定义接口，就像我们平常使用对象调用一样。</li>
 <li>Ribbon：软负载，通过往 RestTemplate 中注入负载 Handler，然后通过负载算法选取调用（通过 Eureka 获取服务注册信息）。<br>我们目前打算使用 Ribbon 负载方式，为什么？看下面代码就知道了：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><code class="hljs plain">restTemplate.getForObject(&quot;http:&#x2F;&#x2F;eureka-client&#x2F;hello&quot;, String.class);<br></code></pre></td></tr></table></figure>
+<pre><code class="hljs plain">restTemplate.getForObject(&quot;http:&#x2F;&#x2F;eureka-client&#x2F;hello&quot;, String.class);</code></pre>
 
 <h1 id="Config-配置中心"><a href="#Config-配置中心" class="headerlink" title="Config 配置中心"></a>Config 配置中心</h1><img src="/posts/1879991184/index/4.png" srcset="/img/loading.gif" class="">
 
