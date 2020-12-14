@@ -7,6 +7,8 @@ tags:
   - Linux
 ---
 
+
+
 安装Linux/Ubuntu的阿里云ECS默认情况下是使用账号+密码通过SSH登录的，并且默认账户是root，所以这里难免会有安全隐患。
 因此这里记录一下：Linux/Ubuntu系统怎么设置普通用户（非root用户），本教程以admin用户为例，使用秘钥登录通过SSH登录远程服务器。
 
@@ -46,7 +48,7 @@ tags:
 创建普通用户
 使用root用户操作以下命令创建普通用户：
 ## 创建用户并修改密码
-    
+
     useradd admin
     passwd admin
     vi /etc/sudoers                                 # 增加用户su身份，编辑sudoers文件
@@ -74,7 +76,7 @@ tags:
      # 保存退出后，重启ssh服务
      systemctl stop sshd
      systemctl start sshd
-     
+
 # 本地验证登录
 因为每次记ip很麻烦，推荐使用hosts映射ip，使用别名登录。
 ## 添加远端ip别名
@@ -83,8 +85,9 @@ tags:
     xxx.xxx.xxx.xxx   my-remote-server              # 添加远端ip及映射的别名：ip  别名
 
 ## 验证ssh免密登录
-    
+
     ssh admin@xxx.xxx.xxx.xxx                       # ip远程登录
     ssh admin@my-remote-server                      # 别名远程登录
-    
+
    
+
