@@ -1,0 +1,25 @@
+language: zh-Hans
+
+duoshuo:
+  enable: true
+  shortname: your-duoshuo-shortname
+
+# menu:
+#   home: / || home
+#   about: /about/ || user
+#   tags: /tags/ || tags
+#   categories: /categories/ || th
+#   archives: /archives/ || archive
+#   #schedule: /schedule/ || calendar
+#   sitemap: /sitemap.xml || sitemap
+#   commonweal: /404/ || heartbeat
+
+menu:
+  home: /
+  about: /about || user
+  tags: /tags
+  categories: /categories
+  archives: /archives
+  #schedule: /schedule/ || calendar
+  sitemap: /sitemap.xml
+  commonweal: /404

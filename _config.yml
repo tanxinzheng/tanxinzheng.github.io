@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 学习的小屋
-subtitle: Hello World
+title: 拉菲的个人博客
+subtitle: 学而时习之
 description: '少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。'
-keywords:
-author: tanxinzheng
-language: zh-CN
+keywords: hexo,java,spring
+author: 拉菲
+language: zh-Hans
 timezone: ''
 
 # 是否压缩所有静态文件 html,css,js,image等

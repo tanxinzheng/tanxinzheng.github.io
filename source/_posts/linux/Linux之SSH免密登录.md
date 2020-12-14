@@ -1,5 +1,5 @@
 ---
-title: Linux使用非root账户密钥登录SSH
+title: Linux之SSH免密登录
 abbrlink: 2578104319
 date: 2017-08-18 17:59:25
 index_img: /img/linux.jpeg
@@ -90,4 +90,5 @@ tags:
     ssh admin@my-remote-server                      # 别名远程登录
 
    
+
 
