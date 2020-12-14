@@ -35,6 +35,8 @@ jobs:
           gulp build
           hexo deploy
       - uses: manyuanrong/setup-ossutil@v1.0
+        env:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
            # endpoint 可以去oss控制台上查看
            endpoint: "oss-cn-shanghai.aliyuncs.com"
