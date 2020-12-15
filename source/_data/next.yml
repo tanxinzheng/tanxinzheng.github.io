@@ -122,7 +122,8 @@ menu:
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
-  schedule: /schedule/ || calendar
+  # schedule: /schedule/ || calendar
+  links: /links/ || link
   sitemap: /sitemap.xml || sitemap
   commonweal: /404.html || heartbeat
 
@@ -164,11 +165,11 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: #/images/avatar.gif
+  url: https://portrait.gitee.com/uploads/avatars/user/268/806957_tanxinzheng_1589599664.png!avatar200
   # If true, the avatar will be dispalyed in circle.
-  rounded: false
+  rounded: true
   # If true, the avatar will be rotated with the cursor.
-  rotated: false
+  rotated: true
 
 # Posts / Categories / Tags in sidebar.
 site_state: true
@@ -358,11 +359,11 @@ codeblock:
   highlight_theme: normal
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Show text copy result.
-    show_result: false
+    show_result: true
     # Available values: default | flat | mac
-    style:
+    style: flat
 
 back2top:
   enable: true
@@ -712,7 +713,7 @@ firestore:
 # Show Views / Visitors of the website / page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi
 busuanzi_count:
-  enable: false
+  enable: true
   total_visitors: true
   total_visitors_icon: user
   total_views: true
@@ -996,3 +997,34 @@ vendors:
 css: css
 js: js
 images: images
+
+
+
+################      自定义功能区        ########################
+
+mylinks:
+- nickname: Hexo
+  avatar: https://hexo.io/icon/favicon-32x32.png
+  site: https://hexo.io/zh-cn/docs/
+  info: Hexo中文文档
+- nickname: fontawesome图标库
+  avatar: https://fontawesome.dashgame.com/assets/ico/favicon.ico
+  site: https://fontawesome.dashgame.com/
+  info: 图标库
+- nickname: NexT主题
+  avatar: https://theme-next.js.org/images/logo.svg
+  site: https://theme-next.js.org/
+  info: NexT主题文档
+
+# hexo-tag-cloud
+tag_cloud:
+  textFont: Trebuchet MS, Helvetica
+  textColor: '#333'
+  textHeight: 25
+  outlineColor: '#E2E1D1'
+  maxSpeed: 0.1
+
+# 备案信息
+beian:
+  enable: false
+  icp: 湘ICP备20010696号

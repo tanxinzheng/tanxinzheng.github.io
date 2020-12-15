@@ -49,7 +49,15 @@
       {%- set next_site = 'https://' + theme.scheme | lower + '.theme-next.org' %}
     {%- endif %}
     {{- __('footer.powered', next_url('https://hexo.io', 'Hexo', {class: 'theme-link'}) + ' & ' + next_url(next_site, 'NexT.' + theme.scheme, {class: 'theme-link'})) }}
+    {%- if theme.beian.enable == true %}
+    <!-- 添加备案信息 -->
+    <div class="BbeiAn-info">
+        <!--a标签中增加nofollow属性，避免爬虫出站。-->
+        <a target="_blank" href="https://beian.miit.gov.cn/" rel="nofollow">{{ theme.beian.icp }}</a>
+    </div>
+    {%- endif %}
   </div>
+   
 {%- endif %}
 
 {%- if theme.add_this_id %}
@@ -59,9 +67,3 @@
 {%- endif %}
 
 {{- next_inject('footer') }}
-
-<div class="BbeiAn-info" style="color:#4dfc23">
-    {{ __('湘ICP备') }} -
-    <a target="_blank" href="http://www.miitbeian.gov.cn/" style="color:#4dfc23;"  rel="nofollow">20010696号</a> <!--a标签中增加nofollow属性，避免爬虫出站。-->| 
-    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42090202000295" style="text-decoration:none;color:#4dfc23;padding-left:30px;background:url(https://s1.ax1x.com/2018/09/29/ilmwIH.png) no-repeat left center" rel="nofollow">{{ __('鄂公网安备 42090202000295') }}</a>    <!--这里将图标作为了背景，以使得能和后面的文字在同一行-->
-</div>

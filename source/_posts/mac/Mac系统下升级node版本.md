@@ -6,18 +6,15 @@ tags:
 	- node
 ---
 
-[TOC]
+
 
 #### 第一步：使用npm安装n模块
 
 n模块是专门用来管理nodejs版本的，名字就叫n执行命令
 
-`npm install -g n`  **（注意不带sudo，我按照网上带sudo提示错误）**
-
-
-
-出现此日志表示添加n包成功
-
+````
+npm install -g n
+````
 #### 第二步：使用n模块升级node
 
 *第一种是升级到最新版本*

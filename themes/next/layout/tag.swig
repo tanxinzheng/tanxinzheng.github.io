@@ -23,6 +23,7 @@
       {{ post_template.render(page.posts) }}
     </div>
   </div>
+
   {#####################}
   {### END TAG BLOCK ###}
   {#####################}

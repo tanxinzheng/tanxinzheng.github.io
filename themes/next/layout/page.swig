@@ -10,6 +10,9 @@
     {{- __('title.tag') + page_title_suffix }}
   {%- elif page.type === 'schedule' and not page.title %}
     {{- __('title.schedule') + page_title_suffix }}
+  
+  {%- elif page.type === 'links' and not page.title %}
+    {{- __('title.links') + page_title_suffix }}
   {%- else %}
     {{- page.title + page_title_suffix }}
   {%- endif %}
@@ -29,6 +32,7 @@
       {#################}
       <div class="post-body{%- if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
         {%- if page.type === 'tags' %}
+           <!--  -->
           <div class="tag-cloud">
             <div class="tag-cloud-title">
               {{ _p('counter.tag_cloud', site.tags.length) }}
@@ -44,6 +48,20 @@
               }}
             </div>
           </div>
+          
+          <!-- 添加3D标签云功能代码 -->
+          {% if site.tags.length > 1 %}
+          <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
+          <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
+          <div class="widget-wrap">
+              <div id="myCanvasContainer" class="widget tagcloud" style="text-align: center;">
+                  <canvas width="600" height="500" id="resCanvas" style="width=100%">
+                      {{ list_tags() }}
+                  </canvas>
+              </div>
+          </div>
+          {% endif %}
+
         {% elif page.type === 'categories' %}
           <div class="category-all-page">
             <div class="category-all-title">
@@ -53,6 +71,9 @@
               {{ list_categories() }}
             </div>
           </div>
+          <!-- 友情链接-->
+        {% elif page.type === 'links' %}
+          {% include 'links.swig' %}
         {% elif page.type === 'schedule' %}
           <div class="event-list">
           </div>
