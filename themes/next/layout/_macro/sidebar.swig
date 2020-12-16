@@ -44,19 +44,14 @@
         </div>
       {%- endif %}
 
+      <!-- 添加粒子时钟插件 -->
+      {% include '../_third-party/clock/clock.swig' %}
+
+      <!-- 添加近期文章 -->
+      {% include '../_third-party/recent_posts/recent_posts.swig' %}
+
       <!-- 添加标签云功能代码 -->
-      {% if site.tags.length > 1 %}
-      <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
-      <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
-      <div class="widget-wrap">
-          <h3 class="widget-title">Tag Cloud</h3>
-          <div id="myCanvasContainer" class="widget tagcloud">
-              <canvas width="250" height="250" id="resCanvas" style="width=100%">
-                  {{ list_tags() }}
-              </canvas>
-          </div>
-      </div>
-      {% endif %}
+      {% include '../_third-party/tags/tag3dcloud.swig' %}
 
     </div>
   </aside>

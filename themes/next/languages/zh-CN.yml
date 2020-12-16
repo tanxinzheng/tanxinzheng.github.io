@@ -11,12 +11,16 @@ menu:
   categories: 分类
   tags: 标签
   about: 关于
+  books: 书籍
+  movies: 观影
+  games: 游戏
   search: 搜索
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益 404
   links: 友链
 sidebar:
+  recent_posts: 近期文章
   overview: 站点概览
   toc: 文章目录
 post:

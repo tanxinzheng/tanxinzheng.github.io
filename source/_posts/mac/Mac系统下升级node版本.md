@@ -4,6 +4,7 @@ abbrlink: 1345941684
 tags:
 	- mac
 	- node
+description: 如何在Mac系统下升级node版本
 ---
 
 

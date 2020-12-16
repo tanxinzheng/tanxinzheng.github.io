@@ -1,5 +1,7 @@
 ---
-title: 基于Github Action工作流自动部署Hexo
+title: 【Hexo搭建博客】基于Github Action工作流自动部署Hexo
+cetagories:
+  - Hexo
 tags:
   - Hexo
   - Github

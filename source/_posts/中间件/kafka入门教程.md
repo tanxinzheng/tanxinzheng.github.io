@@ -1,9 +1,11 @@
 ---
 title: kafka入门教程[一]
-abbrlink: 1125805293
+categories: 
+  - Java
+  - Kafka
 tags:
-	- kafka
-	- mq
+	- Kafka
+abbrlink: 1125805293
 ---
 
 

@@ -1,7 +1,11 @@
 ---
 title: Spring Cloud 微服务架构全链路实践
+categories: 
+  - Java
+  - Spring Cloud
 tags:
   - Spring
+  - Spring Cloud
   - Java
 index_img: /img/spring-cloud.jpeg
 abbrlink: 1879991184

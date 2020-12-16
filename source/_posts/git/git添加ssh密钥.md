@@ -2,6 +2,7 @@
 title: Windows下git配置ssh密钥
 tags:
   - git
+categories: 技术
 abbrlink: 41928510
 date: 2020-12-10 22:33:34
 ---

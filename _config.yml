@@ -4,12 +4,12 @@
 
 # Site
 title: 拉菲的个人博客
-subtitle: 学而时习之
-description: '少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。'
+subtitle: 少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。
+description: 'Coding，Studing，Learning，Reading'
 keywords: hexo,java,spring
 author: 拉菲
 language: zh-CN
-timezone: ''
+timezone: 'Asia/ShangHai'
 
 # 是否压缩所有静态文件 html,css,js,image等
 ## 其他配置请参考： https://github.com/chenzhutian/hexo-all-minifier
@@ -109,3 +109,28 @@ deploy:
   repo: git@github.com:tanxinzheng/tanxinzheng.github.io.git
   branch: master
   message: deploy blog
+
+
+diy_time:
+  runtime: false
+  clock: false
+
+# 近期文章配置
+recent_posts: 
+  enable: true
+  # icon:
+  layout: block
+
+douban:
+  user: 228459259
+  builtin: true
+  book:
+    title: '书籍推荐'
+    quote: '温故而知新'
+  movie:
+    title: '观影推荐'
+    quote: ''
+  game:
+    title: '游戏推荐'
+    quote: ''
+  timeout: 10000

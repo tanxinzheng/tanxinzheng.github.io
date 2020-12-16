@@ -122,6 +122,9 @@ menu:
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
+  books: /books/ || book
+  movies: /movies/ || file-movie-o
+  # games: /games/ || gamepad
   # schedule: /schedule/ || calendar
   links: /links/ || link
   sitemap: /sitemap.xml || sitemap
@@ -180,7 +183,7 @@ site_state: true
 # Value before `||` delimiter is the target permalink, value after `||` delimiter is the name of Font Awesome icon.
 social:
   GitHub: https://github.com/tanxinzheng || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+  E-Mail: mailto:tanxinzheng@139.com || envelope
   #Weibo: https://weibo.com/yourname || weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
@@ -210,11 +213,11 @@ links:
 toc:
   enable: true
   # Automatically add list number to toc.
-  number: true
+  number: false
   # If true, all words will placed on next lines if header width longer then sidebar width.
-  wrap: false
+  wrap: true
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
-  expand_all: false
+  expand_all: true
   # Maximum heading depth of generated toc.
   max_depth: 6
 
@@ -257,7 +260,7 @@ symbols_count_time:
   item_text_total: false
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
-tag_icon: false
+tag_icon: true
 
 # Reward (Donate)
 # Front-matter variable (unsupport animation).
@@ -370,11 +373,11 @@ back2top:
   # Back to top in sidebar.
   sidebar: false
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
 # Reading progress bar
 reading_progress:
-  enable: false
+  enable: true
   # Available values: top | bottom
   position: top
   color: "#37c6c0"
@@ -391,8 +394,8 @@ bookmark:
 
 # `Follow me on GitHub` banner in the top-right corner.
 github_banner:
-  enable: false
-  permalink: https://github.com/yourname
+  enable: true
+  permalink: https://github.com/tanxinzheng
   title: Follow me on GitHub
 
 
@@ -514,11 +517,11 @@ math:
 
 # Easily enable fast Ajax navigation on your website.
 # Dependencies: https://github.com/theme-next/theme-next-pjax
-pjax: false
+pjax: true
 
 # FancyBox is a tool that offers a nice and elegant way to add zooming functionality for images.
 # For more information: https://fancyapps.com/fancybox
-fancybox: false
+fancybox: true
 
 # A JavaScript library for zooming images like Medium.
 # Do not enable both `fancybox` and `mediumzoom`.
@@ -1028,3 +1031,27 @@ tag_cloud:
 beian:
   enable: false
   icp: 湘ICP备20010696号
+
+# diy时间插件配置
+diy_time:
+  runtime: true
+  clock: true
+
+# 近期文章配置
+recent_posts: 
+  enable: true
+  # icon:
+  layout: block
+
+# 3d标签云
+tag3dcloud:
+  enable: true
+
+# 支持 豆瓣读书 和 豆瓣观影 页
+douban:
+  user: https://www.douban.com/people/228459259/
+  builtin: false
+  book:
+    title: '书籍'
+    quote: 'This is my book quote'
+  timeout: 10000
