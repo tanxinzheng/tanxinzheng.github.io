@@ -32,7 +32,7 @@ jobs:
         run: |
           hexo clean
           # 此处hexo generate换成使用gulp对静态资源进行压缩
-          gulp build
+          hexo g
           hexo deploy
       - uses: manyuanrong/setup-ossutil@v1.0
         env:
