@@ -52,28 +52,29 @@ language_switcher: true
 
 footer:
   # Specify the date when the site was setup. If not defined, current year will be used.
-  #since: 2015
+  since: 2016
 
   # Icon between year and copyright info.
   icon:
     # Icon name in Font Awesome. See: https://fontawesome.com/v4.7.0/icons/
     # `heart` is recommended with animation in red (#ff0000).
-    name: user
+    name: heart
     # If you want to animate the icon, set it to true.
-    animated: false
+    animated: true
     # Change the color of icon, using Hex Code.
-    color: "#808080"
+    color: "#ff0000"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
   copyright:
 
   # Powered by Hexo & NexT
-  powered: true
+  powered: false
 
-  # Beian ICP and gongan information for Chinese users. See: http://www.beian.miit.gov.cn, http://www.beian.gov.cn
+  # Beian ICP and gongan information for Chinese users. See: https://beian.miit.gov.cn/, http://www.beian.gov.cn
   beian:
-    enable: false
-    icp:
+    enable: true
+    icp: 湘ICP备20010696号
+    color: "#ffff"
     # The digit in the num of gongan beian.
     gongan_id:
     # The full num of gongan beian.
@@ -133,7 +134,7 @@ menu:
 # Enable / Disable menu icons / item badges.
 menu_settings:
   icons: true
-  badges: false
+  badges: true
 
 
 # ---------------------------------------------------------------
@@ -257,7 +258,7 @@ post_meta:
 symbols_count_time:
   separated_meta: true
   item_text_post: true
-  item_text_total: false
+  item_text_total: true
 
 # Use icon instead of the symbol # to indicate the tag at the bottom of the post
 tag_icon: true
@@ -267,7 +268,7 @@ tag_icon: true
 reward_settings:
   # If true, reward will be displayed in every article by default.
   enable: true
-  animation: false
+  animation: true
   #comment: Donate comment here.
 
 reward:
@@ -615,19 +616,19 @@ changyan:
 # Valine
 # For more information: https://valine.js.org, https://github.com/xCss/Valine
 valine:
-  enable: false
-  appid: # Your leancloud application appid
-  appkey: # Your leancloud application appkey
+  enable: true
+  appid: sjH6KrDKBGoivzr60dHpe1k3-gzGzoHsz
+  appkey: M6dsbJ26b4Cpl3ioltpbr3BN
   notify: false # Mail notifier
-  verify: false # Verification code
-  placeholder: Just go go # Comment box placeholder
+  verify: true # Verification code
+  placeholder: 请留下您的宝贵建议！ # Comment box placeholder
   avatar: mm # Gravatar style
   guest_info: nick,mail,link # Custom comment header
   pageSize: 10 # Pagination size
-  language: # Language, available values: en, zh-cn
+  language: zh-cn # Language, available values: en, zh-cn
   visitor: false # Article reading statistic
   comment_count: true # If false, comment count will only be displayed in post page, not in home page
-  recordIP: false # Whether to record the commenter IP
+  recordIP: true # Whether to record the commenter IP
   serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
   #post_meta_order: 0
 
@@ -719,9 +720,9 @@ busuanzi_count:
   enable: true
   total_visitors: true
   total_visitors_icon: user
-  total_views: true
+  total_views: false 
   total_views_icon: eye
-  post_views: true
+  post_views: false
   post_views_icon: eye
 
 
@@ -1005,7 +1006,7 @@ images: images
 
 ################      自定义功能区        ########################
 
-mylinks:
+friend_links:
 - nickname: Hexo
   avatar: https://hexo.io/icon/favicon-32x32.png
   site: https://hexo.io/zh-cn/docs/
@@ -1027,29 +1028,20 @@ tag_cloud:
   outlineColor: '#E2E1D1'
   maxSpeed: 0.1
 
-# 备案信息
-beian:
-  enable: false
-  icp: 湘ICP备20010696号
-
 # diy时间插件配置
 diy_time:
   runtime: true
   clock: true
 
-# 近期文章配置
-recent_posts: 
-  enable: true
-  # icon:
-  layout: block
 
 # 3d标签云
 tag3dcloud:
   enable: true
 
+
 # 支持 豆瓣读书 和 豆瓣观影 页
 douban:
-  user: https://www.douban.com/people/228459259/
+  user: 228459259
   builtin: false
   book:
     title: '书籍'

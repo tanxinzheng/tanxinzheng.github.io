@@ -1,8 +1,6 @@
 ---
 title: Spring Cloud 微服务架构全链路实践
-categories: 
-  - Java
-  - Spring Cloud
+categories: 技术
 tags:
   - Spring
   - Spring Cloud

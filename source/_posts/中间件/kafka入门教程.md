@@ -1,8 +1,6 @@
 ---
 title: kafka入门教程[一]
-categories: 
-  - Java
-  - Kafka
+categories: 技术
 tags:
 	- Kafka
 abbrlink: 1125805293

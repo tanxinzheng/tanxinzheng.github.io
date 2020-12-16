@@ -48,7 +48,6 @@
               }}
             </div>
           </div>
-          
           <!-- 添加3D标签云功能代码 -->
           {% if site.tags.length > 1 %}
           <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>

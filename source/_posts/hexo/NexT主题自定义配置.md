@@ -1,8 +1,6 @@
 ---
-title: 【Hexo搭建博客】NexT主题配置
-categories:
-  - Hexo
-  - NexT
+title: Hexo搭建博客：NexT主题配置
+categories: 博客
 tags:
   - Hexo
   - NexT
@@ -1091,6 +1089,55 @@ diy_time:
   runtime: true 
   clock: true # 粒子时钟
 ```
+
+## 4.23 添加近期文章
+
+添加配置参数 **~/theme/next/_config.yml** ，添加如下配置：
+
+```
+recent_posts:
+  enable: true
+  recent_posts_title: 最新发表文章
+```
+
+首先我们找到侧边栏模块 **next/layout/_macro/sidebar.swig** ,这个负责渲染侧边栏
+在我们想要放置**最新文章模块**的地方添加如下代码：
+
+```
+{% if theme.recent_posts.enable %}
+  <aside class="sidebar sidebar-ads sidebar-posts">
+    <div>
+      <div class="recent_posts_title">
+        {{ theme.recent_posts.recent_posts_title }}
+      </div>
+      <ul class="links-of-blogroll-list">
+        {% set posts = site.posts.sort('-date') %}
+        {% set bg_colors = ['rgb(31, 216, 210)', 'rgb(4, 166, 247)', 'rgb(70, 101, 226)', 'rgb(94, 137, 229)', 'rgb(0, 206, 123)'] %}
+        {% for post in posts.slice('0', '5') %}
+          <li>
+            <div class="text-img" style="background:{{bg_colors[loop.index - 1]}};">{{ post.title.substr(0, 3) }}</div>
+            <div class="post-name">
+              <div>{{ date(post.date, config.date_format) }}</div>
+              <div><a href="{{ url_for(post.path) }}" title="{{ post.title }}" >{{ post.title }}</a></div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </aside>
+  {% endif %}
+```
+
+最后重新执行
+
+```
+hexo clean
+hexo g
+```
+
+
+
+最后我们得到的效果是
 
 ## Google统计
 

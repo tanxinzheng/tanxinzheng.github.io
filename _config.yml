@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 拉菲的个人博客
+title: TanXZ's Blog
 subtitle: 少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。
 description: 'Coding，Studing，Learning，Reading'
 keywords: hexo,java,spring
-author: 拉菲
+author: TanXZ
 language: zh-CN
 timezone: 'Asia/ShangHai'
 
@@ -17,7 +17,7 @@ all_minifier: true
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://www.tanxz.com
 root: /
 permalink: posts/:abbrlink/index.html
 abbrlink:
@@ -116,14 +116,13 @@ diy_time:
   clock: false
 
 # 近期文章配置
-recent_posts: 
+recent_posts:
   enable: true
-  # icon:
-  layout: block
+  title: 最新发表文章
 
 douban:
   user: 228459259
-  builtin: true
+  builtin: false
   book:
     title: '书籍推荐'
     quote: '温故而知新'
@@ -134,3 +133,15 @@ douban:
     title: '游戏推荐'
     quote: ''
   timeout: 10000
+
+github_badge:
+  enable: true
+  badges:
+    - title: NexT主题版本
+      href: https://theme-next.js.org/
+      subject: Theme
+      value: NexT 7.8.0
+    - title: Power for Hexo
+      href: https://hexo.io/zh-cn/docs/
+      subject: Power
+      value: Hexo 4.2.1

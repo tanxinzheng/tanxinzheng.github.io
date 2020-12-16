@@ -78,7 +78,7 @@
         <div class="links-content">
             <div class="link-navigation">
 
-                {% for link in theme.mylinks %}
+                {% for link in theme.friend_links %}
 
                     <div class="card">
                         <img class="ava" src="{{ link.avatar }}"/>
