@@ -7,6 +7,9 @@ index_img: /img/hexo.jpeg
 abbrlink: 2628717197
 ---
 
+> 本文章将讲解在搭建Hexo博客过程中的常用命令及命令的参数说明
+
+<!-- more -->
 
 ## init
 

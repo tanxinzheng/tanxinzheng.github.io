@@ -146,3 +146,17 @@ github_badge:
       subject: Power
       value: Hexo 4.2.1
 
+moon_menu:
+  back2top:
+    enable: true
+    icon: fa fa-chevron-up
+    func: back2top
+    order: -1
+  back2bottom:
+    enable: true
+    icon: fa fa-chevron-down
+    func: back2bottom
+    order: -2
+  chat:
+    icon: fa fa-comments
+    func: openGitter

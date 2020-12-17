@@ -12,6 +12,7 @@
     "version": "4.2.1"
   },
   "dependencies": {
+    "gifsicle": "^5.1.0",
     "hexo": "^4.0.0",
     "hexo-abbrlink": "^2.0.5",
     "hexo-cake-moon-menu": "^2.3.1",

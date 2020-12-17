@@ -85,7 +85,7 @@
               <span class="post-meta-item-text">{{ __('post.in') }}</span>
               {%- for cat in post.categories.toArray() %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="{{ url_for(cat.path) }}/index.html" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a>
+                  <a href="{{ url_for(cat.path) }}index.html" itemprop="url" rel="index"><span itemprop="name">{{ cat.name }}</span></a>
                 </span>
 
                 {%- set cat_length = post.categories.length %}
@@ -182,7 +182,7 @@
           <!--noindex-->
           {%- if theme.read_more_btn %}
             <div class="post-button">
-              <a class="btn" href="{{ url_for(post.path) }}/index.html">
+              <a class="btn" href="{{ url_for(post.path) }}">
                 {{ __('post.read_more') }} &raquo;
               </a>
             </div>
@@ -193,7 +193,7 @@
           <!--noindex-->
           {%- if theme.read_more_btn %}
             <div class="post-button">
-              <a class="btn" href="{{ url_for(post.path) }}/index.html#more" rel="contents">
+              <a class="btn" href="{{ url_for(post.path) }}#more" rel="contents">
                 {{ __('post.read_more') }} &raquo;
               </a>
             </div>
