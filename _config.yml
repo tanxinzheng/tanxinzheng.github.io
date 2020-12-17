@@ -57,7 +57,7 @@ highlight:
   auto_detect: false
   tab_replace: ''
   wrap: true
-  hljs: false
+  hljs: true
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -122,7 +122,7 @@ recent_posts:
 
 douban:
   user: 228459259
-  builtin: false
+  builtin: true
   book:
     title: '书籍推荐'
     quote: '温故而知新'

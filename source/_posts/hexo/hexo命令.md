@@ -13,7 +13,7 @@ abbrlink: 2628717197
 
 ## init
 
-```
+```shell
 $ hexo init [folder]
 ```
 
@@ -26,7 +26,7 @@ This command is a shortcut that runs the following steps:
 
 ## new
 
-```
+```xml
 $ hexo new [layout] <title>
 ```
 
