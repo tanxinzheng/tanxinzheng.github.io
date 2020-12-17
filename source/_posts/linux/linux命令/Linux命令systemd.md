@@ -4,9 +4,10 @@ abbrlink: 1026478354
 tags:
 	- Linux
 	- Centos
+date: 2017-12-20
 ---
 
-[TOC]
+
 
 ## **Systemd 概述**
 

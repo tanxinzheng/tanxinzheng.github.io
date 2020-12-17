@@ -215,7 +215,7 @@ links:
 toc:
   enable: true
   # Automatically add list number to toc.
-  number: false
+  number: true
   # If true, all words will placed on next lines if header width longer then sidebar width.
   wrap: true
   # If true, all level of TOC in a post will be displayed, rather than the activated part of it.
@@ -1040,13 +1040,3 @@ tag3dcloud:
   enable: true
   width: 400px
   height: 600px
-
-
-# 支持 豆瓣读书 和 豆瓣观影 页
-douban:
-  user: 228459259
-  builtin: false
-  book:
-    title: '书籍'
-    quote: 'This is my book quote'
-  timeout: 10000
