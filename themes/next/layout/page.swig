@@ -32,7 +32,7 @@
       {#################}
       <div class="post-body{%- if page.direction and page.direction.toLowerCase() === 'rtl' %} rtl{%- endif %}">
         {%- if page.type === 'tags' %}
-           <!--  -->
+           <!--  
           <div class="tag-cloud">
             <div class="tag-cloud-title">
               {{ _p('counter.tag_cloud', site.tags.length) }}
@@ -48,26 +48,15 @@
               }}
             </div>
           </div>
-          <!-- 添加3D标签云功能代码 -->
-          {% if site.tags.length > 1 %}
-          <script type="text/javascript" charset="utf-8" src="/js/tagcloud.js"></script>
-          <script type="text/javascript" charset="utf-8" src="/js/tagcanvas.js"></script>
-          <div class="widget-wrap">
-              <div id="myCanvasContainer" class="widget tagcloud" style="text-align: center;">
-                  <canvas width="600" height="500" id="resCanvas" style="width=100%">
-                      {{ list_tags() }}
-                  </canvas>
-              </div>
-          </div>
-          {% endif %}
-
+          -->
+          {% include '_third-party/tags/tag3dcloud.swig' %}
         {% elif page.type === 'categories' %}
           <div class="category-all-page">
             <div class="category-all-title">
               {{ _p('counter.categories', site.categories.length) }}
             </div>
             <div class="category-all">
-              {{ list_categories() }}
+              {{ list_categories({suffix:'index.html'}) }}
             </div>
           </div>
           <!-- 友情链接-->

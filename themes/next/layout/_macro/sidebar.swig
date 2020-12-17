@@ -50,9 +50,6 @@
       <!-- 添加近期文章 -->
       {% include '../_third-party/recent_posts/recent_posts.swig' %}
 
-      <!-- 添加标签云功能代码 -->
-      {% include '../_third-party/tags/tag3dcloud.swig' %}
-
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
