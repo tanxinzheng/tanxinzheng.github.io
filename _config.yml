@@ -157,6 +157,3 @@ moon_menu:
     icon: fa fa-chevron-down
     func: back2bottom
     order: -2
-  chat:
-    icon: fa fa-comments
-    func: openGitter
