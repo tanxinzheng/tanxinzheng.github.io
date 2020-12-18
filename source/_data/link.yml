@@ -24,7 +24,12 @@
     - name: Hexo
       link: https://hexo.io/zh-tw/
       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
-      descr: 快速、簡單且強大的網誌框架  
+      descr: 快速、簡單且強大的網誌框架
+    - name: Google Fonts
+      link: http://www.googlefonts.cn/
+      avatar: https://tse3-mm.cn.bing.net/th/id/OIP.WQyWuZZ_6C5jCgnifD6C_QHaHa?w=178&h=180&c=7&o=5&dpr=2&pid=1.7
+      descr: 众多优美酷炫字体可供选择
+      
     - name: Weibo
       link: https://www.weibo.com/
       avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png

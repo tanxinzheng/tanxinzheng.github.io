@@ -20,9 +20,9 @@
     each badge in theme.footer.badges
       div.github-badge
         a(href=badge.href, target="_blank")
-        span.badge-subject=badge.subject
-        span.badge-value.bg-blue=badge.value
+          span.badge-subject=badge.subject
+          span.badge-value.bg-blue=badge.value
     div.github-badge
       a(href="https://beian.miit.gov.cn/", target="_blank", title="版权，ICP备案")
-      span.badge-subject!=`Copyright`
-      span.badge-value.bg-blue!=`&copy;${theme.footer.owner.since} - ${theme.footer.owner.icp}`
+        span.badge-subject!=`Copyright`
+        span.badge-value.bg-blue!=`&copy;${theme.footer.owner.since} - ${theme.footer.owner.icp}`

@@ -1,5 +1,5 @@
 ---
-title: 分类
+title: 分类 | Categories
 type: "categories"
 comments: false
 ---

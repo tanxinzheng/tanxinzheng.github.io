@@ -89,7 +89,7 @@ avatar:
   effect: false
 
 # The banner image of home page
-index_img: /img/banner.jpg
+index_img: /img/banner2.jpg
 
 # If the banner of page not setting, it will show the top_img
 default_top_img: /img/default.png
@@ -381,7 +381,7 @@ footer:
   copyright: true # Copyright of theme and framework
   badges:
     - title: Butterfly主题版本
-      href: https://theme-next.js.org/
+      href: https://butterfly.js.org/
       subject: Theme
       value: Butterfly 3.4.1
     - title: Power for Hexo
@@ -578,8 +578,8 @@ font:
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
 blog_title_font:
-  font_link:
-  font-family:
+  font_link: https://fonts.font.im/css?family=Dancing+Script
+  font-family: Dancing Script, cursive
 
 # The setting of divider icon (水平分隔線圖標設置)
 hr_icon:

@@ -563,8 +563,8 @@ font:
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
 blog_title_font:
-  font_link:
-  font-family:
+  font_link: https://fonts.font.im/css?family=Dancing+Script
+  font-family: Dancing Script, cursive
 
 # The setting of divider icon (水平分隔線圖標設置)
 hr_icon:
