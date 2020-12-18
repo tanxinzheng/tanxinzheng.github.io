@@ -4,6 +4,7 @@ categories: 博客
 tags:
   - Hexo
 index_img: /img/hexo.jpeg
+aplayer: true
 abbrlink: 2628717197
 ---
 

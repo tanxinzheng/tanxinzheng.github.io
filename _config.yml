@@ -93,8 +93,7 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-include: 
-  - _config.butterfly.yml
+# include: 
 # exclude:
 ignore:
 
@@ -146,3 +145,6 @@ github_badge:
       href: https://hexo.io/zh-cn/docs/
       subject: Power
       value: Hexo 4.2.1
+
+aplayer:
+  asset_inject: false

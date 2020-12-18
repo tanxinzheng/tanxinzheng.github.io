@@ -13,7 +13,7 @@ menu:
   分类: /categories/ || fas fa-folder-open
   娱乐||fas fa-list:
     - 阅读 || /books/ || fas fa-book
-    - 音乐 || /music/ || fas fa-music
+    # - 音乐 || /musics/ || fas fa-music
     - 电影 || /movies/ || fas fa-video
   友链: /links/ || fas fa-link
   树洞: /about/ || fas fa-heart
@@ -89,7 +89,7 @@ avatar:
   effect: false
 
 # The banner image of home page
-index_img: /img/banner.jpg
+index_img: /img/banner2.jpg
 
 # If the banner of page not setting, it will show the top_img
 default_top_img: /img/default.png
