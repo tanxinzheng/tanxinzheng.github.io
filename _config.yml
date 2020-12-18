@@ -84,7 +84,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## Use post's date for updated date unless set in front-matter
-use_date_for_updated: false
+updated_option: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -93,7 +93,8 @@ pagination_dir: page
 
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
-# include:
+include: 
+  - _config.butterfly.yml
 # exclude:
 ignore:
 
@@ -116,9 +117,9 @@ diy_time:
   clock: false
 
 # 近期文章配置
-recent_posts:
-  enable: true
-  title: 最新发表文章
+# recent_posts:
+#   enable: true
+#   title: 最新发表文章
 
 douban:
   user: 228459259
@@ -145,15 +146,3 @@ github_badge:
       href: https://hexo.io/zh-cn/docs/
       subject: Power
       value: Hexo 4.2.1
-
-moon_menu:
-  back2top:
-    enable: true
-    icon: fa fa-chevron-up
-    func: back2top
-    order: -1
-  back2bottom:
-    enable: true
-    icon: fa fa-chevron-down
-    func: back2bottom
-    order: -2

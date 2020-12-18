@@ -1,0 +1,35 @@
+- class_name: 友情鏈接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: JerryC
+      link: https://jerryc.me/
+      avatar: https://jerryc.me/image/avatar.png
+      descr: 今日事,今日畢
+    - name: Hexo
+      link: https://hexo.io/zh-tw/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、簡單且強大的網誌框架
+
+- class_name: 網站
+  class_desc: 值得推薦的網站
+  link_list:
+    - name: Github
+      link: https://github.com/tanxinzheng
+      avatar: https://tse3-mm.cn.bing.net/th/id/OIP.CrfHDaVmhSd6poZDvbwlhwHaHa?o=6&pid=Api&w=1080&h=1080&rs=1
+      descr: 国际最大基友社交平台
+    - name: Gitee
+      link: https://gitee.com/tanxinzheng
+      avatar: https://gitee.com/index/gitee-people/images/mayun_logo.png
+      descr: 中国最大基友社交平台
+    - name: Pug
+      link: https://www.pugjs.cn/api/getting-started.html
+      avatar: https://tse2-mm.cn.bing.net/th/id/OIP.a8FM1mul-mzI6O8DRKOMWgHaHa?o=6&pid=Api&rs=1
+      descr: Pug中文文档库
+    - name: Weibo
+      link: https://www.weibo.com/
+      avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
+      descr: 中國最大社交分享平台
+    - name: Twitter
+      link: https://twitter.com/
+      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+      descr: 社交分享平台
