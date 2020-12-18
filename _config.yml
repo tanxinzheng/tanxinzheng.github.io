@@ -125,10 +125,10 @@ douban:
   user: 228459259
   builtin: true
   book:
-    title: '书籍推荐'
+    title: '书籍 | Books'
     quote: '博学之，审问之，慎思之，明辨之，笃行之。——《礼记》'
   movie:
-    title: '观影推荐'
+    title: '观影 | Movies'
     quote: '生活不是电影，生活比电影苦。——《天堂电影院》'
   game:
     title: '游戏推荐'

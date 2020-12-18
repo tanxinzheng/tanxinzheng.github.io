@@ -7,9 +7,6 @@ index_img: /img/hexo.jpeg
 abbrlink: 3878378061
 ---
 
-
-
-
 你可以执行下列命令来创建一篇新文章或者新的页面。
 
 ```
