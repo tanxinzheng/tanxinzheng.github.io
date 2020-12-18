@@ -5,8 +5,8 @@
 # Site
 title: TanXZ's Blog
 subtitle: 少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。
-description: 'Coding，Studing，Learning，Reading'
-keywords: hexo,java,spring
+description: '青，取之于蓝而青于蓝；冰，水为之而寒于水。——《荀子·劝学》'
+keywords: hexo,java,spring,tanxz,txz,blog
 author: TanXZ
 language: zh-CN
 timezone: 'Asia/ShangHai'
@@ -115,20 +115,15 @@ diy_time:
   runtime: false
   clock: false
 
-# 近期文章配置
-# recent_posts:
-#   enable: true
-#   title: 最新发表文章
-
 douban:
   user: 228459259
   builtin: true
   book:
     title: '书籍推荐'
-    quote: '温故而知新'
+    quote: '博学之，审问之，慎思之，明辨之，笃行之。——《礼记》'
   movie:
     title: '观影推荐'
-    quote: ''
+    quote: '做人如果没有梦想，那跟咸鱼有什么区别？快回火星吧，地球上是很危险滴！——《少林足球》'
   game:
     title: '游戏推荐'
     quote: ''
