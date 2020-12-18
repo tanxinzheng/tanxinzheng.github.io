@@ -5,10 +5,6 @@
       link: https://jerryc.me/
       avatar: https://jerryc.me/image/avatar.png
       descr: 今日事,今日畢
-    - name: Hexo
-      link: https://hexo.io/zh-tw/
-      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
-      descr: 快速、簡單且強大的網誌框架
 
 - class_name: 網站
   class_desc: 值得推薦的網站
@@ -25,6 +21,10 @@
       link: https://www.pugjs.cn/api/getting-started.html
       avatar: https://tse2-mm.cn.bing.net/th/id/OIP.a8FM1mul-mzI6O8DRKOMWgHaHa?o=6&pid=Api&rs=1
       descr: Pug中文文档库
+    - name: Hexo
+      link: https://hexo.io/zh-tw/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、簡單且強大的網誌框架  
     - name: Weibo
       link: https://www.weibo.com/
       avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png

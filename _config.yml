@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: TanXZ's Blog
+title: TanXZ
 subtitle: 少而好学，如曰出之阳；壮而好学，如曰中之光；老而好学，如炳烛之明。学然后知不足，教然后知困。知不足，然后能自反也；知困，然后能自强也。
-description: 'Coding，Studing，Learning，Reading'
+description: '业精于勤，荒于嬉。'
 keywords: hexo,java,spring
 author: TanXZ
 language: zh-CN
@@ -126,10 +126,10 @@ douban:
   builtin: true
   book:
     title: '书籍推荐'
-    quote: '温故而知新'
+    quote: '博学之，审问之，慎思之，明辨之，笃行之。——《礼记》'
   movie:
     title: '观影推荐'
-    quote: ''
+    quote: '生活不是电影，生活比电影苦。——《天堂电影院》'
   game:
     title: '游戏推荐'
     quote: ''

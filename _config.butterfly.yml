@@ -13,7 +13,7 @@ menu:
   分类: /categories/ || fas fa-folder-open
   娱乐||fas fa-list:
     - 阅读 || /books/ || fas fa-book
-    - 音乐 || /music/ || fas fa-music
+    # - 音乐 || /music/ || fas fa-music
     - 电影 || /movies/ || fas fa-video
   友链: /links/ || fas fa-link
   树洞: /about/ || fas fa-heart
@@ -372,11 +372,23 @@ crisp:
 # Footer Settings
 # --------------------------------------
 footer:
+  theme: badge # default | badge
   owner:
     enable: true
-    since: 2018
+    since: 2016
+    icp: "湘ICP备20010696号"
   custom_text:
   copyright: true # Copyright of theme and framework
+  badges:
+    - title: Butterfly主题版本
+      href: https://theme-next.js.org/
+      subject: Theme
+      value: Butterfly 3.4.1
+    - title: Power for Hexo
+      href: https://hexo.io/zh-cn/docs/
+      subject: Power
+      value: Hexo 5.3.0
+
 
 # Analysis
 # --------------------------------------
@@ -617,7 +629,7 @@ aside:
       link: https://github.com/tanxinzheng
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 欢迎大家来到我的博客！😘
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
