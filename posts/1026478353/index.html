@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Linux查看内存使用情况 | TanXZ</title><meta name="keywords" content="Linux"><meta name="author" content="TanXZ"><meta name="copyright" content="TanXZ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="有一些命令可以用来检查 Linux 系统中的内存使用情况，下面是一些更好的命令。  有许多工具可以查看 Linux 系统中的内存使用情况。一些命令被广泛使用，比如 free、ps。而另一些命令允许通过多种方式展示系统的性能统计信息，比如 top。在这篇文章中，我们将介绍一些命令以帮助你确定当前占用着最多内存资源的用户或者进程。 下面是一些按照进程查看内存使用情况的命令： 按照进程查看内存使用情况">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux查看内存使用情况">
+<meta property="og:url" content="https://www.tanxz.com/posts/1026478353/index.html">
+<meta property="og:site_name" content="TanXZ">
+<meta property="og:description" content="有一些命令可以用来检查 Linux 系统中的内存使用情况，下面是一些更好的命令。  有许多工具可以查看 Linux 系统中的内存使用情况。一些命令被广泛使用，比如 free、ps。而另一些命令允许通过多种方式展示系统的性能统计信息，比如 top。在这篇文章中，我们将介绍一些命令以帮助你确定当前占用着最多内存资源的用户或者进程。 下面是一些按照进程查看内存使用情况的命令： 按照进程查看内存使用情况">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2020-12-18T15:55:13.491Z">
+<meta property="article:modified_time" content="2020-12-18T15:55:13.493Z">
+<meta property="article:author" content="TanXZ">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://www.tanxz.com/posts/1026478353/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//s4.cnzz.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="msvalidate.01" content="https://tanxz.com/BingSiteAuth.xml"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?85cba576a727eae332f2f68d76e413c0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" data-pjax="data-pjax" src="https://s11.cnzz.com/z_stat.php?id=1259978293&amp;web_id=1259978293"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: TanXZ","link":"链接: ","source":"来源: TanXZ","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-18 23:55:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'true'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}const fontSizeVal = saveToLocal.get('global-font-size')
+if (fontSizeVal !== undefined) {
+  document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+}})()</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="TanXZ" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=443074688"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://travellings.now.sh/"><i class="fa-fw fas fa-paper-plane"></i><span> 飞一下</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">TanXZ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=443074688"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://travellings.now.sh/"><i class="fa-fw fas fa-paper-plane"></i><span> 飞一下</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Linux查看内存使用情况</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-12-18T15:55:13.491Z" title="发表于 2020-12-18 23:55:13">2020-12-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-18T15:55:13.493Z" title="更新于 2020-12-18 23:55:13">2020-12-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>12分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><blockquote>
+<p>有一些命令可以用来检查 Linux 系统中的内存使用情况，下面是一些更好的命令。</p>
+</blockquote>
+<p>有许多工具可以查看 Linux 系统中的内存使用情况。一些命令被广泛使用，比如 <code>free</code>、<code>ps</code>。而另一些命令允许通过多种方式展示系统的性能统计信息，比如 <code>top</code>。在这篇文章中，我们将介绍一些命令以帮助你确定当前占用着最多内存资源的用户或者进程。</p>
+<p>下面是一些按照进程查看内存使用情况的命令：</p>
+<h3 id="按照进程查看内存使用情况"><a href="#按照进程查看内存使用情况" class="headerlink" title="按照进程查看内存使用情况"></a>按照进程查看内存使用情况</h3><h4 id="使用-top"><a href="#使用-top" class="headerlink" title="使用 top"></a>使用 top</h4><p><code>top</code> 是最好的查看内存使用情况的命令之一。为了查看哪个进程使用着最多的内存，一个简单的办法就是启动 <code>top</code>，然后按下 <code>shift+m</code>，这样便可以查看按照内存占用百分比从高到底排列的进程。当你按下了 <code>shift+m</code> ，你的 <code>top</code> 应该会得到类似于下面这样的输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$toptop - 09:39:34 up 5 days, 3 min,  3 users,  load average: 4.77, 4.43, 3.72Tasks: 251 total,   3 running, 247 sleeping,   1 stopped,   0 zombie%Cpu(s): 50.6 us, 35.9 sy,  0.0 ni, 13.4 id,  0.2 wa,  0.0 hi,  0.0 si,  0.0 stMiB Mem :   5944.4 total,    128.9 free,   2509.3 used,   3306.2 buff&#x2F;cacheMiB Swap:   2048.0 total,   2045.7 free,      2.2 used.   3053.5 avail Mem  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND  400 nemo      20   0 3309580 550188 168372 S   0.3   9.0   1:33.27 Web Content32469 nemo      20   0 3492840 447372 163296 S   7.3   7.3   3:55.60 firefox32542 nemo      20   0 2845732 433388 140984 S   6.0   7.1   4:11.16 Web Content  342 nemo      20   0 2848520 352288 118972 S  10.3   5.8   4:04.89 Web Content 2389 nemo      20   0 1774412 236700  90044 S  39.7   3.9   9:32.64 vlc29527 nemo      20   0 2735792 225980  84744 S   9.6   3.7   3:02.35 gnome-shell30497 nemo      30  10 1088476 159636  88884 S   0.0   2.6   0:11.99 update-manager30058 nemo      20   0 1089464 140952  33128 S   0.0   2.3   0:04.58 gnome-software32533 nemo      20   0 2389088 104712  79544 S   0.0   1.7   0:01.43 WebExtensions 2256 nemo      20   0 1217884 103424  31304 T   0.0   1.7   0:00.28 vlc 1713 nemo      20   0 2374396  79588  61452 S   0.0   1.3   0:00.49 Web Content29306 nemo      20   0  389668  74376  54340 S   2.3   1.2   0:57.25 Xorg32739 nemo      20   0  289528  58900  34480 S   1.0   1.0   1:04.08 RDD Process29732 nemo      20   0  789196  57724  42428 S   0.0   0.9   0:00.38 evolution-alarm 2373 root      20   0  150408  57000   9924 S   0.3   0.9  10:15.35 nessusd<br></code></pre></td></tr></table></figure>
+<p>注意 <code>%MEM</code> 排序。列表的大小取决于你的窗口大小，但是占据着最多的内存的进程将会显示在列表的顶端。</p>
+<h4 id="使用-ps"><a href="#使用-ps" class="headerlink" title="使用 ps"></a>使用 ps</h4><p><code>ps</code> 命令中的一列用来展示每个进程的内存使用情况。为了展示和查看哪个进程使用着最多的内存，你可以将 <code>ps</code> 命令的结果传递给 <code>sort</code> 命令。下面是一个有用的示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ ps aux | sort -rnk 4 | head -5nemo       400  3.4  9.2 3309580 563336 ?      Sl   08:59   1:36 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 6 -isForBrowser -prefsLen 9086 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo     32469  8.2  7.7 3492840 469516 ?      Sl   08:54   4:15 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -new-windownemo     32542  8.9  7.6 2875428 462720 ?      Sl   08:55   4:36 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 2 -isForBrowser -prefsLen 1 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo       342  9.9  5.9 2854664 363528 ?      Sl   08:59   4:44 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 5 -isForBrowser -prefsLen 8763 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo      2389 39.5  3.8 1774412 236116 pts&#x2F;1  Sl+  09:15  12:21 vlc videos&#x2F;edge_computing.mp4<br></code></pre></td></tr></table></figure>
+<p>在上面的例子中（文中已截断），<code>sort</code> 命令使用了 <code>-r</code> 选项（反转）、<code>-n</code> 选项（数字值）、<code>-k</code> 选项（关键字），使 <code>sort</code> 命令对 <code>ps</code> 命令的结果按照第四列（内存使用情况）中的数字逆序进行排列并输出。如果我们首先显示 <code>ps</code> 命令的标题，那么将会便于查看。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ ps aux | head -1; ps aux | sort -rnk 4 | head -5USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMANDnemo       400  3.4  9.2 3309580 563336 ?      Sl   08:59   1:36 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 6 -isForBrowser -prefsLen 9086 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo     32469  8.2  7.7 3492840 469516 ?      Sl   08:54   4:15 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -new-windownemo     32542  8.9  7.6 2875428 462720 ?      Sl   08:55   4:36 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 2 -isForBrowser -prefsLen 1 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo       342  9.9  5.9 2854664 363528 ?      Sl   08:59   4:44 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 5 -isForBrowser -prefsLen 8763 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo      2389 39.5  3.8 1774412 236116 pts&#x2F;1  Sl+  09:15  12:21 vlc videos&#x2F;edge_computing.mp4<br></code></pre></td></tr></table></figure>
+<p>如果你喜欢这个命令，你可以用下面的命令为他指定一个别名，如果你想一直使用它，不要忘记把该命令添加到你的 <code>~/.bashrc</code> 文件中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ alias mem-by-proc&#x3D;&quot;ps aux | head -1; ps aux | sort -rnk 4&quot;<br></code></pre></td></tr></table></figure>
+<p>下面是一些根据用户查看内存使用情况的命令：</p>
+<h3 id="按用户查看内存使用情况"><a href="#按用户查看内存使用情况" class="headerlink" title="按用户查看内存使用情况"></a>按用户查看内存使用情况</h3><h4 id="使用-top-1"><a href="#使用-top-1" class="headerlink" title="使用 top"></a>使用 top</h4><p>按照用户检查内存使用情况会更复杂一些，因为你需要找到一种方法把用户所拥有的所有进程统计为单一的内存使用量。</p>
+<p>如果你只想查看单个用户进程使用情况，<code>top</code> 命令可以采用与上文中同样的方法进行使用。只需要添加 <code>-U</code> 选项并在其后面指定你要查看的用户名，然后按下 <code>shift+m</code> 便可以按照内存使用有多到少进行查看。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ top -U nemotop - 10:16:33 up 5 days, 40 min,  3 users,  load average: 1.91, 1.82, 2.15Tasks: 253 total,   2 running, 250 sleeping,   1 stopped,   0 zombie%Cpu(s): 28.5 us, 36.8 sy,  0.0 ni, 34.4 id,  0.3 wa,  0.0 hi,  0.0 si,  0.0 stMiB Mem :   5944.4 total,    224.1 free,   2752.9 used,   2967.4 buff&#x2F;cacheMiB Swap:   2048.0 total,   2042.7 free,      5.2 used.   2812.0 avail Mem  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND  400 nemo      20   0 3315724 623748 165440 S   1.0  10.2   1:48.78 Web Content32469 nemo      20   0 3629380 607492 161688 S   2.3  10.0   6:06.89 firefox32542 nemo      20   0 2886700 404980 136648 S   5.6   6.7   6:50.01 Web Content  342 nemo      20   0 2922248 375784 116096 S  19.5   6.2   8:16.07 Web Content 2389 nemo      20   0 1762960 234644  87452 S   0.0   3.9  13:57.53 vlc29527 nemo      20   0 2736924 227260  86092 S   0.0   3.7   4:09.11 gnome-shell30497 nemo      30  10 1088476 156372  85620 S   0.0   2.6   0:11.99 update-manager30058 nemo      20   0 1089464 138160  30336 S   0.0   2.3   0:04.62 gnome-software32533 nemo      20   0 2389088 102532  76808 S   0.0   1.7   0:01.79 WebExtensions<br></code></pre></td></tr></table></figure>
+<h4 id="使用-ps-1"><a href="#使用-ps-1" class="headerlink" title="使用 ps"></a>使用 ps</h4><p>你依旧可以使用 <code>ps</code> 命令通过内存使用情况来排列某个用户的进程。在这个例子中，我们将使用 <code>grep</code> 命令来筛选得到某个用户的所有进程。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ ps aux | head -1; ps aux | grep ^nemo| sort -rnk 4 | moreUSER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMANDnemo     32469  7.1 11.5 3724364 701388 ?      Sl   08:54   7:21 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -new-windownemo       400  2.0  8.9 3308556 543232 ?      Sl   08:59   2:01 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 6 -isForBrowser -prefsLen 9086 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni&#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo     32542  7.9  7.1 2903084 436196 ?      Sl   08:55   8:07 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 2 -isForBrowser -prefsLen 1 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo       342 10.8  7.0 2941056 426484 ?      Rl   08:59  10:45 &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;firefox -contentproc -childID 5 -isForBrowser -prefsLen 8763 -prefMapSize 210653 -parentBuildID 20200107212822 -greomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;omni.ja -appomni &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser&#x2F;omni.ja -appdir &#x2F;usr&#x2F;lib&#x2F;firefox&#x2F;browser 32469 true tabnemo      2389 16.9  3.8 1762960 234644 pts&#x2F;1  Sl+  09:15  13:57 vlc videos&#x2F;edge_computing.mp4nemo     29527  3.9  3.7 2736924 227448 ?      Ssl  08:50   4:11 &#x2F;usr&#x2F;bin&#x2F;gnome-shell<br></code></pre></td></tr></table></figure>
+<h3 id="使用-ps-和其他命令的搭配"><a href="#使用-ps-和其他命令的搭配" class="headerlink" title="使用 ps 和其他命令的搭配"></a>使用 ps 和其他命令的搭配</h3><p>如果你想比较某个用户与其他用户内存使用情况将会比较复杂。在这种情况中，创建并排序一个按照用户总的内存使用量是一个不错的方法，但是它需要做一些更多的工作，并涉及到许多命令。在下面的脚本中，我们使用 <code>ps aux | grep -v COMMAND | awk &#39;&#123;print $1&#125;&#39; | sort -u</code> 命令得到了用户列表。其中包含了系统用户比如 <code>syslog</code>。我们对每个任务使用 <code>awk</code> 命令以收集每个用户总的内存使用情况。在最后一步中，我们展示每个用户总的内存使用量（按照从大到小的顺序）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">#!&#x2F;bin&#x2F;bashstats&#x3D;””echo &quot;%   user&quot;echo &quot;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&quot;# collect the datafor user in &#96;ps aux | grep -v COMMAND | awk &#39;&#123;print $1&#125;&#39; | sort -u&#96;do  stats&#x3D;&quot;$stats\n&#96;ps aux | egrep ^$user | awk &#39;BEGIN&#123;total&#x3D;0&#125;; \    &#123;total +&#x3D; $4&#125;;END&#123;print total,$1&#125;&#39;&#96;&quot;done# sort data numerically (largest first)echo -e $stats | grep -v ^$ | sort -rn | head<br></code></pre></td></tr></table></figure>
+<p>这个脚本的输出可能如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs plain">$ .&#x2F;show_user_mem_usage%   user&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;69.6 nemo5.8 root0.5 www-data0.3 shs0.2 whoopsie0.2 systemd+0.2 colord0.2 clamav0 syslog0 rtkit<br></code></pre></td></tr></table></figure>
+<p>在 Linux 有许多方法可以报告内存使用情况。可以通过一些用心设计的工具和命令，来查看并获得某个进程或者用户占用着最多的内存。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">TanXZ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.tanxz.com/posts/1026478353/index.html">https://www.tanxz.com/posts/1026478353/index.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.tanxz.com" target="_blank">TanXZ</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechatpay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/1026478353/index.html"><img class="prev-cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux命令killall</div></div></a></div><div class="next-post pull-right"><a href="/posts/3858194484/index.html"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">待办事项</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/posts/2578104319/index.html" title="Linux之SSH免密登录"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-08-18</div><div class="title">Linux之SSH免密登录</div></div></a></div><div><a href="/posts/1026478354/index.html" title="Linux命令systemd"><img class="cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2017-12-20</div><div class="title">Linux命令systemd</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">TanXZ</div><div class="author-info__description">业精于勤，荒于嬉；行成于思，毁于随。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tanxinzheng"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tanxinzheng" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:tanxinzheng@139.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a><a class="social-icon" href="https://gitee.com/tanxinzheng" target="_blank" title="Gitee"><i class="fab fa-gitee"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎大家来到我的博客！😘</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E7%85%A7%E8%BF%9B%E7%A8%8B%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-number">1.</span> <span class="toc-text">按照进程查看内存使用情况</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-top"><span class="toc-number">1.1.</span> <span class="toc-text">使用 top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-ps"><span class="toc-number">1.2.</span> <span class="toc-text">使用 ps</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E7%94%A8%E6%88%B7%E6%9F%A5%E7%9C%8B%E5%86%85%E5%AD%98%E4%BD%BF%E7%94%A8%E6%83%85%E5%86%B5"><span class="toc-number">2.</span> <span class="toc-text">按用户查看内存使用情况</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-top-1"><span class="toc-number">2.1.</span> <span class="toc-text">使用 top</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-ps-1"><span class="toc-number">2.2.</span> <span class="toc-text">使用 ps</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-ps-%E5%92%8C%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4%E7%9A%84%E6%90%AD%E9%85%8D"><span class="toc-number">3.</span> <span class="toc-text">使用 ps 和其他命令的搭配</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/73533081/index.html" title="如何进行科学搜索"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何进行科学搜索"/></a><div class="content"><a class="title" href="/posts/73533081/index.html" title="如何进行科学搜索">如何进行科学搜索</a><time datetime="2020-12-19T13:27:50.000Z" title="发表于 2020-12-19 21:27:50">2020-12-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/0/index.html" title="无题"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/0/index.html" title="无题">无题</a><time datetime="2020-12-19T13:26:24.400Z" title="发表于 2020-12-19 21:26:24">2020-12-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1026478353/index.html" title="Linux命令killall"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux命令killall"/></a><div class="content"><a class="title" href="/posts/1026478353/index.html" title="Linux命令killall">Linux命令killall</a><time datetime="2020-12-18T15:55:13.495Z" title="发表于 2020-12-18 23:55:13">2020-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1026478353/index.html" title="Linux查看内存使用情况"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux查看内存使用情况"/></a><div class="content"><a class="title" href="/posts/1026478353/index.html" title="Linux查看内存使用情况">Linux查看内存使用情况</a><time datetime="2020-12-18T15:55:13.491Z" title="发表于 2020-12-18 23:55:13">2020-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3858194484/index.html" title="待办事项"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="待办事项"/></a><div class="content"><a class="title" href="/posts/3858194484/index.html" title="待办事项">待办事项</a><time datetime="2020-12-18T15:40:25.000Z" title="发表于 2020-12-18 23:40:25">2020-12-18</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><div id="footer-wrap"><div class="github-badge"><a href="https://butterfly.js.org/" target="_blank"><span class="badge-subject">Theme</span><span class="badge-value bg-blue">Butterfly 3.4.1</span></a></div><div class="github-badge"><a href="https://hexo.io/zh-cn/docs/" target="_blank"><span class="badge-subject">Power</span><span class="badge-value bg-blue">Hexo 5.3.0</span></a></div><div class="github-badge"><a href="https://beian.miit.gov.cn/" target="_blank" title="版权，ICP备案"><span class="badge-subject">Copyright</span><span class="badge-value bg-blue">&copy;2016 - 湘ICP备20010696号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: '请留下您的宝贵建议！😘',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = `http://data.zz.baidu.com/urls?site=${theme.baidu_push.site}&token=${theme.baidu_push.token}`;
+  }
+  else{
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>

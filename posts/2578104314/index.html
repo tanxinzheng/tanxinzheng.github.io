@@ -1,0 +1,389 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>linux与k8s的区别 | TanXZ</title><meta name="keywords" content="Docker"><meta name="author" content="TanXZ"><meta name="copyright" content="TanXZ"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="10分钟看懂Docker和K8S本文来源：鲜枣课堂 2010年，几个搞IT的年轻人，在美国旧金山成立了一家名叫“dotCloud”的公司。  这家公司主要提供基于PaaS的云计算技术服务。具体来说，是和LXC有关的容器技术。  LXC，就是Linux容器虚拟技术（Linux container） 后来，dotCloud公司将自己的容器技术进行了简化和标准化，并命名为——Docker。  Docke">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux与k8s的区别">
+<meta property="og:url" content="https://www.tanxz.com/posts/2578104314/index.html">
+<meta property="og:site_name" content="TanXZ">
+<meta property="og:description" content="10分钟看懂Docker和K8S本文来源：鲜枣课堂 2010年，几个搞IT的年轻人，在美国旧金山成立了一家名叫“dotCloud”的公司。  这家公司主要提供基于PaaS的云计算技术服务。具体来说，是和LXC有关的容器技术。  LXC，就是Linux容器虚拟技术（Linux container） 后来，dotCloud公司将自己的容器技术进行了简化和标准化，并命名为——Docker。  Docke">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2017-08-18T09:59:25.000Z">
+<meta property="article:modified_time" content="2020-12-18T15:55:13.493Z">
+<meta property="article:author" content="TanXZ">
+<meta property="article:tag" content="Docker">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/avatar.png"><link rel="canonical" href="https://www.tanxz.com/posts/2578104314/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//s4.cnzz.com"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="msvalidate.01" content="https://tanxz.com/BingSiteAuth.xml"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?85cba576a727eae332f2f68d76e413c0";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" data-pjax="data-pjax" src="https://s11.cnzz.com/z_stat.php?id=1259978293&amp;web_id=1259978293"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dancing+Script" media="print" onload="this.media='all'"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: TanXZ","link":"链接: ","source":"来源: TanXZ","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}
+
+// https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-native-javascript
+const getScript = url => new Promise((resolve, reject) => {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  script.onerror = reject
+  script.onload = script.onreadystatechange = function() {
+    const loadState = this.readyState
+    if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+    script.onload = script.onreadystatechange = null
+    resolve()
+  }
+  document.head.appendChild(script)
+})</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2020-12-18 23:55:13'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'true'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}const fontSizeVal = saveToLocal.get('global-font-size')
+if (fontSizeVal !== undefined) {
+  document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+}})()</script><meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="TanXZ" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=443074688"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://travellings.now.sh/"><i class="fa-fw fas fa-paper-plane"></i><span> 飞一下</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">TanXZ</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/books/"><i class="fa-fw fas fa-book"></i><span> 阅读</span></a></li><li><a class="site-page" target="_blank" rel="noopener" href="https://music.163.com/#/user/home?id=443074688"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://travellings.now.sh/"><i class="fa-fw fas fa-paper-plane"></i><span> 飞一下</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">linux与k8s的区别</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2017-08-18T09:59:25.000Z" title="发表于 2017-08-18 17:59:25">2017-08-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-12-18T15:55:13.493Z" title="更新于 2020-12-18 23:55:13">2020-12-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="10分钟看懂Docker和K8S"><a href="#10分钟看懂Docker和K8S" class="headerlink" title="10分钟看懂Docker和K8S"></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/itbsl/p/10178698.html">10分钟看懂Docker和K8S</a></h1><p><strong>本文来源：鲜枣课堂</strong></p>
+<p>2010年，几个搞IT的年轻人，在美国旧金山成立了一家名叫“dotCloud”的公司。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="../../img/720430-20181226134250810-1685533200.png" alt="img"></p>
+<p>这家公司主要提供基于PaaS的云计算技术服务。具体来说，是和LXC有关的容器技术。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="../../img/720430-20181226134259735-1931086473.png" alt="img"></p>
+<p>LXC，就是Linux容器虚拟技术（Linux container）</p>
+<p>后来，dotCloud公司将自己的容器技术进行了简化和标准化，并命名为——Docker。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="../../img/720430-20181226134308841-1109691453.png" alt="img"></p>
+<p>Docker技术诞生之后，并没有引起行业的关注。而dotCloud公司，作为一家小型创业企业，在激烈的竞争之下，也步履维艰。</p>
+<p>正当他们快要坚持不下去的时候，脑子里蹦出了“开源”的想法。</p>
+<p>什么是“开源”？开源，就是开放源代码。也就是将原来内部保密的程序源代码开放给所有人，然后让大家一起参与进来，贡献代码和意见。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="../../img/720430-20181226134321094-1025894099.png" alt="img"></p>
+<p>Open Source，开源</p>
+<p>有的软件是一开始就开源的。也有的软件，是混不下去，创造者又不想放弃，所以选择开源。自己养不活，就吃“百家饭”嘛。</p>
+<p>2013年3月，dotCloud公司的创始人之一，Docker之父，28岁的Solomon Hykes正式决定，将Docker项目开源。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134409452-99479785.png" alt="img"></p>
+<p>Solomon Hykes（今年刚从Docker离职）</p>
+<p>不开则已，一开惊人。</p>
+<p>越来越多的IT工程师发现了Docker的优点，然后蜂拥而至，加入Docker开源社区。</p>
+<p>Docker的人气迅速攀升，速度之快，令人瞠目结舌。</p>
+<p>开源当月，Docker 0.1版本发布。此后的每一个月，Docker都会发布一个版本。到2014年6月9日，Docker 1.0版本正式发布。</p>
+<p>此时的Docker，已经成为行业里人气最火爆的开源技术，没有之一。甚至像Google、微软、Amazon、VMware这样的巨头，都对它青睐有加，表示将全力支持。</p>
+<p>Docker火了之后，dotCloud公司干脆把公司名字也改成了Docker Inc.。</p>
+<p>Docker和容器技术为什么会这么火爆？说白了，就是因为它“轻”。</p>
+<p>在容器技术之前，业界的网红是虚拟机。<strong>虚拟机</strong>技术的代表，是<strong>VMWare</strong>和<strong>OpenStack</strong>。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134345971-148194642.png" alt="img"></p>
+<p>相信很多人都用过虚拟机。虚拟机，就是在你的操作系统里面，装一个软件，然后通过这个软件，再模拟一台甚至多台“子电脑”出来。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134357583-1178315643.png" alt="img"></p>
+<p>虚拟机，类似于“子电脑”</p>
+<p>在“子电脑”里，你可以和正常电脑一样运行程序，例如开QQ。如果你愿意，你可以变出好几个“子电脑”，里面都开上QQ。“子电脑”和“子电脑”之间，是<strong>相互隔离</strong>的，互不影响。</p>
+<p>虚拟机属于虚拟化技术。而Docker这样的容器技术，也是虚拟化技术，属于<strong>轻量级的虚拟化</strong>。</p>
+<p>虚拟机虽然可以隔离出很多“子电脑”，但占用空间更大，启动更慢，虚拟机软件可能还要花钱（例如VMWare）。</p>
+<p>而容器技术恰好没有这些缺点。它不需要虚拟出整个操作系统，只需要虚拟一个小规模的环境（类似“沙箱”）。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134422660-219996811.png" alt="img"></p>
+<p>沙箱</p>
+<p>它启动时间很快，几秒钟就能完成。而且，它对资源的利用率很高（一台主机可以同时运行几千个Docker容器）。此外，它占的空间很小，虚拟机一般要几GB到几十GB的空间，而容器只需要MB级甚至KB级。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134430830-648875754.png" alt="img"></p>
+<p>容器和虚拟机的对比</p>
+<p>正因为如此，容器技术受到了热烈的欢迎和追捧，发展迅速。</p>
+<p>我们具体来看看Docker。</p>
+<p>大家需要注意，<strong>Docker本身并不是容器</strong>，它是创建容器的工具，是应用容器引擎。</p>
+<p>想要搞懂Docker，其实看它的两句口号就行。</p>
+<p>第一句，是“<strong>Build, Ship and Run</strong>”。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="linux%E4%B8%8Ek8s%E7%9A%84%E5%8C%BA%E5%88%AB.assets/720430-20181226134440039-355719052.png" alt="img"></p>
+<p>也就是，“搭建、发送、运行”，三板斧。</p>
+<p>举个例子：</p>
+<p>我来到一片空地，想建个房子，于是我搬石头、砍木头、画图纸，一顿操作，终于把这个房子盖好了。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134448189-1614413776.png" alt="img"></p>
+<p>结果，我住了一段时间，想搬到另一片空地去。这时候，按以往的办法，我只能再次搬石头、砍木头、画图纸、盖房子。</p>
+<p>但是，跑来一个老巫婆，教会我一种魔法。</p>
+<p>这种魔法，可以把我盖好的房子复制一份，做成“镜像”，放在我的背包里。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134458048-1632935313.png" alt="img"></p>
+<p>等我到了另一片空地，就用这个“镜像”，复制一套房子，摆在那边，拎包入住。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134507695-502496013.png" alt="img"></p>
+<p>怎么样？是不是很神奇？</p>
+<p>所以，Docker的第二句口号就是：“<strong>Build once，Run anywhere（搭建一次，到处能用）</strong>”。</p>
+<p>Docker技术的三大核心概念，分别是：</p>
+<ul>
+<li><strong>镜像（Image）</strong></li>
+<li><strong>容器（Container）</strong></li>
+<li><strong>仓库（Repository）</strong></li>
+</ul>
+<p>我刚才例子里面，那个放在包里的“镜像”，就是<strong>Docker镜像</strong>。而我的背包，就是<strong>Docker仓库</strong>。我在空地上，用魔法造好的房子，就是一个<strong>Docker容器</strong>。</p>
+<p>说白了，这个Docker镜像，是一个特殊的文件系统。它除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（例如环境变量）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。</p>
+<p>也就是说，每次变出房子，房子是一样的，但生活用品之类的，都是不管的。谁住谁负责添置。</p>
+<p>每一个镜像可以变出一种房子。那么，我可以有多个镜像呀！</p>
+<p>也就是说，我盖了一个欧式别墅，生成了镜像。另一个哥们可能盖了一个中国四合院，也生成了镜像。还有哥们，盖了一个非洲茅草屋，也生成了镜像。。。</p>
+<p>这么一来，我们可以交换镜像，你用我的，我用你的，岂不是很爽？</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134517561-1517184540.png" alt="img"></p>
+<p>于是乎，就变成了一个大的公共仓库。</p>
+<p>负责对Docker镜像进行管理的，是<strong>Docker Registry服务</strong>（类似仓库管理员）。</p>
+<p>不是任何人建的任何镜像都是合法的。万一有人盖了一个有问题的房子呢？</p>
+<p>所以，Docker Registry服务对镜像的管理是非常严格的。</p>
+<p>最常使用的Registry公开服务，是官方的<strong>Docker Hub</strong>，这也是默认的Registry，并拥有大量的高质量的官方镜像。</p>
+<p>好了，说完了Docker，我们再把目光转向K8S。</p>
+<p>就在Docker容器技术被炒得热火朝天之时，大家发现，如果想要将Docker应用于具体的业务实现，是存在困难的——编排、管理和调度等各个方面，都不容易。于是，人们迫切需要一套管理系统，对Docker及容器进行更高级更灵活的管理。</p>
+<p>就在这个时候，K8S出现了。</p>
+<p><strong>K8S，就是基于容器的集群管理平台，它的全称，是kubernetes。</strong></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134529220-885595947.png" alt="img"></p>
+<p>Kubernetes这个单词来自于希腊语，含义是舵手或领航员。K8S是它的缩写，用“8”字替代了“ubernete”这8个字符。</p>
+<p>和Docker不同，K8S的创造者，是众人皆知的行业巨头——<strong>Google</strong>。</p>
+<p>然而，K8S并不是一件全新的发明。它的前身，是Google自己捣鼓了十多年的<strong>Borg系统</strong>。</p>
+<p>K8S是2014年6月由Google公司正式公布出来并宣布开源的。</p>
+<p>同年7月，微软、Red Hat、IBM、Docker、CoreOS、Mesosphere和Saltstack等公司，相继加入K8S。</p>
+<p>之后的一年内，VMware、HP、Intel等公司，也陆续加入。</p>
+<p>2015年7月，Google正式加入OpenStack基金会。与此同时，Kuberentes v1.0正式发布。</p>
+<p>目前，kubernetes的版本已经发展到V1.13。</p>
+<p>K8S的架构，略微有一点复杂，我们简单来看一下。</p>
+<p>一个K8S系统，通常称为一个<strong>K8S集群（Cluster）</strong>。</p>
+<p>这个集群主要包括两个部分：</p>
+<ul>
+<li><strong>一个Master节点（主节点）</strong></li>
+<li><strong>一群Node节点（计算节点）</strong></li>
+</ul>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134539670-1577644922.png" alt="img"></p>
+<p>一看就明白：Master节点主要还是负责管理和控制。Node节点是工作负载节点，里面是具体的容器。</p>
+<p>深入来看这两种节点。</p>
+<p>首先是<strong>Master节点。</strong></p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134549651-376208258.png" alt="img"></p>
+<p>Master节点包括API Server、Scheduler、Controller manager、etcd。</p>
+<p>API Server是整个系统的对外接口，供客户端和其它组件调用，相当于“营业厅”。</p>
+<p>Scheduler负责对集群内部的资源进行调度，相当于“调度室”。</p>
+<p>Controller manager负责管理控制器，相当于“大总管”。</p>
+<p>然后是<strong>Node节点</strong>。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134600202-626807958.png" alt="img"></p>
+<p>Node节点包括Docker、kubelet、kube-proxy、Fluentd、kube-dns（可选），还有就是<strong>Pod</strong>。</p>
+<blockquote>
+<p>Pod是Kubernetes最基本的操作单元。一个Pod代表着集群中运行的一个进程，它内部封装了一个或多个紧密相关的容器。除了Pod之外，K8S还有一个Service的概念，一个Service可以看作一组提供相同服务的Pod的对外访问接口。这段不太好理解，跳过吧。</p>
+</blockquote>
+<p>Docker，不用说了，创建容器的。</p>
+<p>Kubelet，主要负责监视指派到它所在Node上的Pod，包括创建、修改、监控、删除等。</p>
+<p>Kube-proxy，主要负责为Pod对象提供代理。</p>
+<p>Fluentd，主要负责日志收集、存储与查询。</p>
+<p>是不是有点懵？唉，三言两语真的很难讲清楚，继续跳过吧。</p>
+<p>Docker和K8S都介绍完了，然而文章并没有结束。</p>
+<p>接下来的部分，是<strong>写给核心网工程师甚至所有通信工程师看的</strong>。</p>
+<p>从几十年前的1G，到现在的4G，再到将来的5G，移动通信发生了翻天覆地的变化，核心网亦是如此。</p>
+<p>但是，如果你仔细洞察这些变化，会发现，所谓的核心网，其实本质上并没有发生改变，无非就是很多的服务器而已。不同的核心网网元，就是不同的服务器，不同的计算节点。</p>
+<p>变化的，是这些“服务器”的形态和接口：形态，从机柜单板，变成机柜刀片，从机柜刀片，变成X86通用刀片服务器；接口，从中继线缆，变成网线，从网线，变成光纤。</p>
+<p>就算变来变去，还是服务器，是计算节点，是CPU。</p>
+<p>既然是服务器，那么就势必会和IT云计算一样，走上虚拟化的道路。毕竟，虚拟化有太多的优势，例如前文所说的低成本、高利用率、充分灵活、动态调度，等等。</p>
+<p>前几年，大家以为虚拟机是核心网的终极形态。目前看来，更有可能是<strong>容器化</strong>。这几年经常说的NFV（网元功能虚拟化），也有可能改口为NFC（网元功能容器化）。</p>
+<p>以VoLTE为例，如果按以前2G/3G的方式，那需要大量的专用设备，分别充当EPC和IMS的不同网元。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134611008-1358657705.png" alt="img"></p>
+<p>VoLTE相关的网元</p>
+<p>而采用容器之后，很可能只需要一台服务器，创建十几个容器，用不同的容器，来分别运行不同网元的服务程序。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134621637-1646543877.png" alt="img"></p>
+<p>这些容器，随时可以创建，也可以随时销毁。还能够在不停机的情况下，随意变大，随意变小，随意变强，随意变弱，在性能和功耗之间动态平衡。</p>
+<p>简直完美！</p>
+<p>5G时代，核心网采用微服务架构，也是和容器完美搭配——单体式架构（Monolithic）变成微服务架构（Microservices），相当于一个全能型变成N个专能型。每个专能型，分配给一个隔离的容器，赋予了最大程度的灵活。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://img2018.cnblogs.com/blog/720430/201812/720430-20181226134635090-835720705.png" alt="img"></p>
+<p>精细化分工</p>
+<p>按照这样的发展趋势，在移动通信系统中，除了天线，剩下的部分都有可能虚拟化。核心网是第一个，但不是最后一个。虚拟化之后的核心网，与其说属于通信，实际上更应该归为IT。核心网的功能，只是容器中普通一个软件功能而已。</p>
+<p>至于说在座的各位核心网工程师，恭喜你们，马上就要成功转型啦！</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">TanXZ</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.tanxz.com/posts/2578104314/index.html">https://www.tanxz.com/posts/2578104314/index.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.tanxz.com" target="_blank">TanXZ</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Docker/">Docker</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏<div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechatpay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/wechatpay.jpg" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" data-lazy-src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/2578104319/index.html"><img class="prev-cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Linux之SSH免密登录</div></div></a></div><div class="next-post pull-right"><a href="/posts/3058308323/index.html"><img class="next-cover" data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Markdown之Cmd Markdown编辑阅读器</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">TanXZ</div><div class="author-info__description">业精于勤，荒于嬉；行成于思，毁于随。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">14</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/tanxinzheng"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/tanxinzheng" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:tanxinzheng@139.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="fas fa-rss"></i></a><a class="social-icon" href="https://gitee.com/tanxinzheng" target="_blank" title="Gitee"><i class="fab fa-gitee"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎大家来到我的博客！😘</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#10%E5%88%86%E9%92%9F%E7%9C%8B%E6%87%82Docker%E5%92%8CK8S"><span class="toc-number">1.</span> <span class="toc-text">10分钟看懂Docker和K8S</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/73533081/index.html" title="如何进行科学搜索"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="如何进行科学搜索"/></a><div class="content"><a class="title" href="/posts/73533081/index.html" title="如何进行科学搜索">如何进行科学搜索</a><time datetime="2020-12-19T13:27:50.000Z" title="发表于 2020-12-19 21:27:50">2020-12-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/0/index.html" title="无题"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/posts/0/index.html" title="无题">无题</a><time datetime="2020-12-19T13:26:24.400Z" title="发表于 2020-12-19 21:26:24">2020-12-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1026478353/index.html" title="Linux命令killall"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux命令killall"/></a><div class="content"><a class="title" href="/posts/1026478353/index.html" title="Linux命令killall">Linux命令killall</a><time datetime="2020-12-18T15:55:13.495Z" title="发表于 2020-12-18 23:55:13">2020-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1026478353/index.html" title="Linux查看内存使用情况"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux查看内存使用情况"/></a><div class="content"><a class="title" href="/posts/1026478353/index.html" title="Linux查看内存使用情况">Linux查看内存使用情况</a><time datetime="2020-12-18T15:55:13.491Z" title="发表于 2020-12-18 23:55:13">2020-12-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/3858194484/index.html" title="待办事项"><img data-lazy-src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="待办事项"/></a><div class="content"><a class="title" href="/posts/3858194484/index.html" title="待办事项">待办事项</a><time datetime="2020-12-18T15:40:25.000Z" title="发表于 2020-12-18 23:40:25">2020-12-18</time></div></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg)"><div id="footer-wrap"><div class="github-badge"><a href="https://butterfly.js.org/" target="_blank"><span class="badge-subject">Theme</span><span class="badge-value bg-blue">Butterfly 3.4.1</span></a></div><div class="github-badge"><a href="https://hexo.io/zh-cn/docs/" target="_blank"><span class="badge-subject">Power</span><span class="badge-value bg-blue">Hexo 5.3.0</span></a></div><div class="github-badge"><a href="https://beian.miit.gov.cn/" target="_blank" title="版权，ICP备案"><span class="badge-subject">Copyright</span><span class="badge-value bg-blue">&copy;2016 - 湘ICP备20010696号</span></a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.spacingElementById('content-inner')
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '',
+      appKey: '',
+      placeholder: '请留下您的宝贵建议！😘',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https') {
+    bp.src = `http://data.zz.baidu.com/urls?site=${theme.baidu_push.site}&token=${theme.baidu_push.token}`;
+  }
+  else{
+    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>
