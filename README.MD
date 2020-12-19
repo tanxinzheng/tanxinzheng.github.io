@@ -104,3 +104,14 @@ $ npm install hexo
 | 3.2 - 3.3   | 0.12                  |
 | 3.0 - 3.1   | 0.10 or iojs          |
 | 0.0.1 - 2.8 | 0.10                  |
+
+## 本地使用ossutils部署
+
+``` windows
+# windows系统无法拉取豆瓣图书和电影的信息，故需要跳过
+$ ossutil64.exe cp public oss://txz-blog/ -c ./oss.conf -r -f -u --exclude 'books*.html' --exclude 'movies*.html'
+```
+
+```
+$ ossutil cp public oss://txz-blog/ -c oss.conf -r -f -u
+```
