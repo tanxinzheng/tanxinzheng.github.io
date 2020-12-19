@@ -1,6 +1,7 @@
 ---
 title: Markdown之Cmd Markdown编辑阅读器
-categories: 写作
+categories: 
+    - 技术分享
 tags:
 	- Markdown
 description: 在这篇Markdown文章中，你讲学习到Markdown的各类语法及展示效果

@@ -109,9 +109,9 @@ $ npm install hexo
 
 ``` windows
 # windows系统无法拉取豆瓣图书和电影的信息，故需要跳过
-$ ossutil64.exe cp public oss://txz-blog/ -c ./oss.conf -r -f -u --exclude 'books*.html' --exclude 'movies*.html'
+$ ossutil64.exe cp public oss://txz-blog/ -c oss.conf -r -f -u
 ```
 
-```
+``` Mac/linux
 $ ossutil cp public oss://txz-blog/ -c oss.conf -r -f -u
 ```

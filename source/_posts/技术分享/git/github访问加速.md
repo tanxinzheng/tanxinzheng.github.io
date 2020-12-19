@@ -3,7 +3,8 @@ title: Github访问加速设置
 tags:
   - git
   - github
-categories: 技术
+categories: 
+  - 技术分享
 abbrlink: 41928511
 date: 2020-12-10 22:33:34
 ---

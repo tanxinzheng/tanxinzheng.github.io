@@ -3,10 +3,28 @@ title: 【数据结构】八大数据结构简介
 tags:
   - 数据结构
   - 算法
-categories: 
-    - 理论学习
 abbrlink: 2827031203
 date: 2017-02-19 21:38:18
+categories:
+    - 理论总结
+    ## 理论知识的分享及学习
+keywords:
+description:
+top_img:
+comments:
+cover: 
+toc:
+toc_number:
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+katex:
+aplayer:
+highlight_shrink:
+aside:
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Markdown导出带目录的html文件
-categories: 写作
+categories: 
+	- 技术实践
 tags:
 	- Markdown
 abbrlink: 3058308324
