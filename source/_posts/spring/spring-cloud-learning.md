@@ -1,11 +1,13 @@
 ---
 title: Spring Cloud 微服务架构全链路实践
-categories: 技术
+categories: 
+  - 解决方案
 tags:
   - Spring
   - Spring Cloud
   - Java
-index_img: /img/spring-cloud.jpeg
+cover: /images/post/1879991184/thumbnail.jpeg
+# 文章缩略图
 abbrlink: 1879991184
 date: 2016-08-16 00:04:12
 ---

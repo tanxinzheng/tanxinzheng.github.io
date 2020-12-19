@@ -11,7 +11,7 @@ page:
   articles: 文章总览
   tag: 标签
   category: 分类
-  archives: 归档
+  archives: 归档 | Archives
 
 sticky: 置顶
 no_title: 无题

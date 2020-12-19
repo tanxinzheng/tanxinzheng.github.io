@@ -13,6 +13,7 @@ katex:
 aside:
 aplayer:
 highlight_shrink:
+sticky: 1
 ---
 
 

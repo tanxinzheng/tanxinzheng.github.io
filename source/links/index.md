@@ -2,6 +2,7 @@
 title: 友链 | My Friends
 type: link
 date: 2020-12-16 01:10:05
+top_img: /images/banner/links.jpg
 ---
 
 ## 交个朋友呗
@@ -9,4 +10,4 @@ date: 2020-12-16 01:10:05
 > Blog 名字： TanXZ
 > Blog 地址： https://www.tanxz.com
 > Blog 头像： https://www.tanxz.com/img/avatar.png
-> Blog 简介： 业精于勤，荒于嬉。
+> Blog 简介： 业精于勤，荒于嬉；行成于思，毁于随。—韩愈·《进学解》

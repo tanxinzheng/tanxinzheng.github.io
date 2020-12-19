@@ -13,10 +13,11 @@ menu:
   分类: /categories/ || fas fa-folder-open
   娱乐||fas fa-list:
     - 阅读 || /books/ || fas fa-book
-    # - 音乐 || /music/ || fas fa-music
+    - 音乐 || https://music.163.com/#/user/home?id=443074688 || fas fa-music
     - 电影 || /movies/ || fas fa-video
   友链: /links/ || fas fa-link
-  树洞: /about/ || fas fa-heart
+  关于: /about/ || fas fa-heart
+  飞一下: https://travellings.now.sh/ || fas fa-paper-plane
 
 # Hide the child menu items in mobile sidebar
 hide_sidebar_menu_child: false
@@ -82,7 +83,7 @@ katex:
 # --------------------------------------
 
 # Favicon（網站圖標）
-favicon: /img/favicon.png
+favicon: /img/avatar.png
 
 # Avatar (頭像)
 avatar:
@@ -90,31 +91,31 @@ avatar:
   effect: false
 
 # The banner image of home page
-index_img: /img/banner2.jpg
+index_img: /images/banner/index.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: /img/default.png
+default_top_img: /images/banner/index.jpg
 
 # The banner image of archive page
-archive_img: /img/default.png
+archive_img: /images/banner/archives.jpg
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: /img/default.png
+tag_img: /images/banner/tag.jpg
 
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
-tag_per_img: /img/default.png
+tag_per_img: /images/banner/tag_page.jpg
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: /img/default.png
+category_img: /images/banner/category.jpg
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
-category_per_img: /img/default.png
+category_per_img: /images/banner/category_page.jpg
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -792,22 +793,25 @@ snackbar:
   bg_dark: '#121212' # The background color of Toast Notification in dark mode
 
 # Baidu Push (百度推送)
-baidu_push: true
+baidu_push:
+  enable: true
+  web: https://www.tanxz.com
+  token: qpiT5VQruyPRkHby
 
 # https://instant.page/
 # prefetch (預加載)
-instantpage: false
+instantpage: true
 
 # https://github.com/vinta/pangu.js
 # Insert a space between Chinese character and English character (中英文之間添加空格)
 pangu:
-  enable: false
+  enable: true
   field: site # site/post
 
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/lazyload
 lazyload:
-  enable: false
+  enable: true
   post: /img/loading.gif
 
 # PWA
