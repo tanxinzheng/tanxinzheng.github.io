@@ -31,7 +31,6 @@ subtitle:
 keywords:
 author: Hunter
 description: Tough times never last, but tough people do.
-123456
 ```
 
 ------
@@ -61,7 +60,6 @@ scheme: Muse
 #scheme: Mist
 #scheme: Pisces
 #scheme: Gemini
-1234
 ```
 
 去掉`#`注释，即启用对应的scheme，博主采用Muse主题，大家可以依次测试效果，选择自己喜欢的scheme。
@@ -90,7 +88,6 @@ scheme: Muse
     #schedule: /schedule/ || calendar
     #sitemap: /sitemap.xml || sitemap
     #commonweal: /404/ || heartbeat
-  123456789
   ```
 
   去掉`#`注释即可显示对应的菜单项，也可自定义新的菜单项。 `||`之前的值是目标链接，之后的是分类页面的图标，图标名称来自于FontAwesome icon。若没有配置图标，默认会使用问号图标。
@@ -101,7 +98,6 @@ scheme: Muse
   ```
   menu:
     resources: 资源
-  12
   ```
 
 - `hexo new page "categories"`
@@ -114,7 +110,6 @@ scheme: Muse
   type: "categories"
   comments: false
   ---
-  123456
   ```
 
   注：如果有启用评论，默认页面带有评论。需要关闭的话，添加字段comments并将值设置为false。
@@ -130,7 +125,6 @@ footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
   #since: 2015
-1234
 ```
 
 **如果不设置，默认显示当前年份**。
@@ -148,7 +142,6 @@ footer:
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
 avatar: http://XXXXXXXXX
-1234
 ```
 
 `avatar`的值是**图片的链接地址**(完整的URI 或者 站内的相对地址皆可)
@@ -195,7 +188,6 @@ avatar: http://XXXXXXXXX
     safari_pinned_tab: /images/logo.svg
     #android_manifest: /images/manifest.json
     #ms_browserconfig: /images/browserconfig.xml
-  1234567
   ```
 
   修改small和medium的路径为下载的图标路径
@@ -219,7 +211,6 @@ three_waves: false
 canvas_lines: true
 # canvas_sphere
 canvas_sphere: false
-123456
 ```
 
 ------
@@ -253,7 +244,6 @@ body{
             background-repeat:no-repeat;
             p,span,a {color: 颜色代码;}
 }
-123456789101112131415161718192021222324
 ```
 
 其中的css样式属性都可以根据图片修改，以达到满意的效果。
@@ -272,7 +262,6 @@ body{
   sidebar:
   position: left
   #position: right
-  123
   ```
 
 - Mist或Muse方案
@@ -296,7 +285,6 @@ body{
    .sidebar-toggle {
      left: $b2t-position-right;
    }
-   12345678
    ```
 
 3. 打开`next/source/css/_common/components/back-to-top.styl`，将`right: $b2t-position-right;`改为`left: $b2t-position-right;`
@@ -312,7 +300,6 @@ body{
 	#display: always
 	#display: hide
 	#display: remove
-12345678
 ```
 
 ------
@@ -346,7 +333,6 @@ var sidebarToggleLine1st = new SidebarToggleLine({
       close: {width: '50%', rotateZ: '45deg', top: '-2px', left: '0px'} //箭头形
     }
   });
-123456789101112131415161718192021222324
 ```
 
 ------
@@ -369,7 +355,6 @@ var sidebarToggleLine1st = new SidebarToggleLine({
    -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);
    -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);
 }
-123456789
 ```
 
 ------
@@ -389,7 +374,6 @@ var spawn = require('child_process').exec;
 hexo.on('new', function(data){
   spawn('start  "markdown编辑器绝对路径.exe" ' + data.path);
 });
-1234
 ```
 
 如果你是Mac平台Hexo用户，则将下列内容写入你的脚本：
@@ -399,7 +383,6 @@ var exec = require('child_process').exec;
 hexo.on('new', function(data){
     exec('open -a "markdown编辑器绝对路径.app" ' + data.path);
 });
-1234
 ```
 
 ------
@@ -412,7 +395,6 @@ hexo.on('new', function(data){
 <img class="site-author-image" itemprop="image"
     src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}"
     alt="{{ theme.author }}" />
-123
 ```
 
 在其前后加上`<a href="/"></a>`即可，如下：
@@ -423,7 +405,6 @@ hexo.on('new', function(data){
        src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}"
        alt="{{ theme.author }}" />
 </a>
-12345
 ```
 
 ------
@@ -459,7 +440,6 @@ hexo.on('new', function(data){
    		external: true
    		family: Noto Serif SC // 挑选的字体
    		size: 16
-   12345678
    ```
 
    1. 修改`/themes/next/source/css/_variables/base.styl`
@@ -468,7 +448,6 @@ hexo.on('new', function(data){
    ```
    $font-family-monospace    = consolas, Menlo, $font-family-chinese, monospace
    $font-family-monospace    = get_font_family('codes'), consolas, Menlo, $font-family-chinese, monospace if get_font_family('codes')
-   12
    ```
 
    改为
@@ -476,7 +455,6 @@ hexo.on('new', function(data){
    ```
    $font-family-monospace    = consolas, Menlo, $font-family-base, monospace
    $font-family-monospace    = get_font_family('codes'), consolas, Menlo, $font-family-base, monospace if get_font_family('codes')
-   12
    ```
 
 ------
@@ -515,7 +493,6 @@ hexo.on('new', function(data){
      enable: true
      length: 150 //摘录字数
    read_more_btn: true //显示全文按钮
-   1234
    ```
 
 2. 打开
@@ -544,7 +521,6 @@ hexo.on('new', function(data){
    		<img src={{ post.images }} class="img-topic">
    	</div>
    {% endif %}
-   12345
    ```
 
 3. 向
@@ -573,7 +549,6 @@ hexo.on('new', function(data){
      float: right;
      clear: right;
    }
-   1234567891011121314151617
    ```
 
 4. 将摘要图片储存于
@@ -600,7 +575,6 @@ hexo.on('new', function(data){
 
    ```
    images: "images/文章摘要配图/Win10桌面.png"
-   1
    ```
 
 ------
@@ -628,7 +602,6 @@ body {
             background-repeat:no-repeat;
             p,span,a {color: rgba(255, 255, 255, 1);}
 }
-123456789101112131415161718
 ```
 
 ------
@@ -643,7 +616,6 @@ body {
 	padding: 30px 60px 30px 60px;
 	background:rgba(255, 255, 255, 0.8) none repeat scroll !important;
 }
-12345
 ```
 
 ------
@@ -702,7 +674,6 @@ background-image: repeating-linear-gradient(
     total_views_icon: eye
     post_views: true
     post_views_icon: eye
-  12345678
   ```
 
 当前版本的NexT集成的不蒜子，总访问人数和人次只是分别用icon来表示，故取消显示，自行改动
@@ -719,7 +690,6 @@ background-image: repeating-linear-gradient(
   <span id="busuanzi_container_site_uv">
     本站访问次数：<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
   </span>
-  123
   ```
 
 ## 4.18 文章末尾添加版权声明
@@ -735,7 +705,6 @@ creative_commons:
   sidebar: false
   post: true  # 将false改为true即可显示版权信息
   language:
-12345
 ```
 
 ------
@@ -759,7 +728,6 @@ creative_commons:
   ```
   local_search:
     enable: true
-  12
   ```
 
 ------

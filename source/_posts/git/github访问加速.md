@@ -55,7 +55,28 @@ _注：若需要加快github访问不只是单纯的需要映射github.com域名
 
 ```
 # github ip
-13.229.188.59 	github.com
+13.229.188.59 		github.com
 52.128.23.153		githubusercontent.com
 ```
 
+#### 刷新本地DNS解析缓存
+
+- Windows
+
+  ```cmd
+  ipconfig /flushdns
+  ```
+
+- Mac
+
+  ```shell
+  sudo killall -HUP mDNSResponder
+  ```
+
+- Linux
+
+  ```shell
+  sudo /etc/init.d/networking restart
+  ```
+
+  

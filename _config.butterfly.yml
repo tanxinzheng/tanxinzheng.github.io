@@ -44,6 +44,7 @@ copy:
 social:
   fab fa-github: https://github.com/tanxinzheng || Github
   fas fa-envelope: mailto:tanxinzheng@139.com || Email
+  fas fa-rss: /atom.xml || RSS
   fab fa-gitee: https://gitee.com/tanxinzheng || Gitee
 
 # search (搜索)
@@ -395,7 +396,7 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics: 59b66848901d48bda311effb4ce9101e
+baidu_analytics: 85cba576a727eae332f2f68d76e413c0
 
 
 # Google Analytics
@@ -408,7 +409,7 @@ tencent_analytics:
 
 # CNZZ Analytics
 # https://www.umeng.com/
-cnzz_analytics:
+cnzz_analytics: 1259978293
 
 # Advertisement
 # --------------------------------------
@@ -436,7 +437,7 @@ google_site_verification:
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
-bing_site_verification:
+bing_site_verification: https://tanxz.com/BingSiteAuth.xml
 
 # Baidu Webmaster tools verification setting
 # See: https://ziyuan.baidu.com/site/
@@ -644,8 +645,8 @@ aside:
     color: false
   card_archives:
     enable: true
-    type: monthly # yearly or monthly
-    format: MMMM YYYY # eg: YYYY年MM月
+    type: yearly # yearly or monthly
+    format: YYYY年MM月 # eg: YYYY年MM月
     order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
     limit: 8 # if set 0 will show all
   card_webinfo:
@@ -718,7 +719,7 @@ darkmode:
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
-  autoChangeMode: false
+  autoChangeMode: true
 
 # Lightbox (圖片大圖查看模式)
 # --------------------------------------

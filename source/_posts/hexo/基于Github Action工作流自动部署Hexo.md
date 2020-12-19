@@ -1,6 +1,8 @@
 ---
 title: Hexo搭建博客：基于Github Action工作流自动部署Hexo
-categories: 博客
+categories: 
+	- 
+	- 博客
 tags:
   - Hexo
   - Github
@@ -28,6 +30,7 @@ $ ssh-keygen -t rsa -C "tanxinzheng@139.com" #此处修改为你github的注册�
 
 ```yml
 name: CI
+# 触发执行的操作和分支名称
 on:
   push:
     branches:
@@ -40,6 +43,7 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v1
         with:
+          # 分支号
           ref: generate-source
       - name: Use Node.js ${{ matrix.node_version }}
         uses: actions/setup-node@v1

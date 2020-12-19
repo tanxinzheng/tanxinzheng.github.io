@@ -7,6 +7,8 @@ index_img: /img/hexo.jpeg
 abbrlink: 3878378061
 ---
 
+> 这篇文章将讲解如果使用hexo命令生成页面、文章及如何配置文章模板等操作。
+
 你可以执行下列命令来创建一篇新文章或者新的页面。
 
 ```
@@ -52,7 +54,7 @@ $ hexo publish [layout] <title>
 
 草稿默认不会显示在页面中，您可在执行时加上 `--draft` 参数，或是把 `render_drafts` 参数设为 `true` 来预览草稿。
 
-## 模版（Scaffold）
+### 模版（Scaffold）
 
 在新建文章时，Hexo 会根据 `scaffolds` 文件夹内相对应的文件来建立文件，例如：
 

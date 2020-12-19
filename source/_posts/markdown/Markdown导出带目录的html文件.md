@@ -13,7 +13,6 @@ date: 2017-10-15 12:10:23
 
 ```
 npm install -g i5ting_toc
-1
 ```
 
 ------
