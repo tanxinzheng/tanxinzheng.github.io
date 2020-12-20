@@ -293,8 +293,8 @@ gitalk:
 # valine
 # https://valine.js.org
 valine:
-  appid: sjH6KrDKBGoivzr60dHpe1k3-gzGzoHsz
-  appkey: M6dsbJ26b4Cpl3ioltpbr3BN
+  appId: sjH6KrDKBGoivzr60dHpe1k3-gzGzoHsz
+  appKey: M6dsbJ26b4Cpl3ioltpbr3BN
   pageSize: 10 # comment list page size
   avatar: monsterid # gravatar style https://valine.js.org/#/avatar
   lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
@@ -533,13 +533,13 @@ canvas_nest:
 activate_power_mode:
   enable: true
   colorful: true # open particle animation (冒光特效)
-  shake: true #  open shake (抖動特效)
+  shake: false #  open shake (抖動特效)
   mobile: false
 
 # Mouse click effects: fireworks (鼠標點擊效果: 煙火特效)
 fireworks:
-  enable: false
-  zIndex: 9999 # -1 or 9999
+  enable: true
+  zIndex: 100 # -1 or 9999
   mobile: false
 
 # Mouse click effects: Heart symbol (鼠標點擊效果: 愛心)
@@ -795,7 +795,7 @@ snackbar:
 # Baidu Push (百度推送)
 baidu_push:
   enable: true
-  web: https://www.tanxz.com
+  site: https://www.tanxz.com
   token: qpiT5VQruyPRkHby
 
 # https://instant.page/

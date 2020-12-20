@@ -1,10 +1,10 @@
-if theme.baidu_push
+if theme.baidu_push.enable
   script.
     (function(){
       const bp = document.createElement('script');
       const curProtocol = window.location.protocol.split(':')[0];
       if (curProtocol === 'https') {
-        bp.src = `http://data.zz.baidu.com/urls?site=${theme.baidu_push.site}&token=${theme.baidu_push.token}`;
+        bp.src = `http://data.zz.baidu.com/urls?site=#{theme.baidu_push.site}&token=#{theme.baidu_push.token}`;
       }
       else{
         bp.src = 'http://push.zhanzhang.baidu.com/push.js';
