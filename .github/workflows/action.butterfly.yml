@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source
+      - name: checkout source
         uses: actions/checkout@v1
         with:
           ref: theme-butterfly
@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           version: 12.0.0
-      - name: Setup hexo
+      - name: set github ssh key && npm install 
         env:
           ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
         run: |
@@ -28,7 +28,7 @@ jobs:
           git config --global user.name "tanxinzheng"
           npm install hexo-cli -g
           npm install
-      - name: Hexo deploy To Github page
+      - name: build hexo 
         run: |
           hexo clean
           # 此处hexo generate换成使用gulp对静态资源进行压缩
@@ -43,5 +43,5 @@ jobs:
            # 使用我们之前配置在secrets里面的accesskeys来配置ossutil
            access-key-id: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_ID }}
            access-key-secret: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_SECRET }}
-      - name: Deploy To OSS
+      - name: deploy to OSS
         run: ossutil cp public oss://txz-blog/ -r -f -u
