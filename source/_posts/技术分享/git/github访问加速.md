@@ -6,6 +6,7 @@ tags:
 categories: 
   - 技术分享
 abbrlink: 41928511
+cover: /images/category/git-logo.jpg
 date: 2020-12-10 22:33:34
 ---
 

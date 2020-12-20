@@ -4,7 +4,7 @@ tags:
   - Java
 abbrlink: 2936205123
 date: 2019-10-10 10:12:00
-index_img: /img/java.jpeg
+cover: /images/category/java.jpeg
 ---
 ## 一、hashcode是什么
 要理解hashcode首先要理解hash表这个概念

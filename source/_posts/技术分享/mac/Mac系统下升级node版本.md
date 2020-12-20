@@ -1,13 +1,14 @@
 ---
 title: Mac系统下升级node版本
 abbrlink: 1345941684
+categories:
+	- 技术实践
 tags:
 	- mac
 	- node
-description: 如何在Mac系统下升级node版本
+description: 
+cover: /images/category/macos.png
 ---
-
-
 
 #### 第一步：使用npm安装n模块
 

@@ -2,7 +2,7 @@
 title: JVM【性能调优篇】
 tags:
   - Java
-index_img: /img/java.jpeg
+cover: /images/category/java.jpeg
 abbrlink: 3097382278
 date: 2016-10-16 11:54:14
 

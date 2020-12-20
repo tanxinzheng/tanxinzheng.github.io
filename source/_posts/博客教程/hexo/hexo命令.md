@@ -3,7 +3,7 @@ title: Hexo搭建博客：Hexo常用命令
 categories: 博客
 tags:
   - Hexo
-index_img: /img/hexo.jpeg
+cover: /images/category/hexo.jpeg
 abbrlink: 2628717197
 ---
 

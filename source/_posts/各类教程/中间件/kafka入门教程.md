@@ -4,6 +4,7 @@ categories: 技术
 tags:
 	- Kafka
 abbrlink: 1125805293
+cover: /images/category/kafka.jpg
 date: 2018-04-10 21:38:18
 ---
 

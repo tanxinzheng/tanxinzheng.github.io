@@ -6,6 +6,7 @@ tags:
 	- Mac
 date: 2018-12-07
 abbrlink: 250724270
+cover: /images/category/macos.png
 ---
 
 # 参考资料

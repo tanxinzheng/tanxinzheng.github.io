@@ -5,7 +5,7 @@ categories:
 tags:
   - Hexo
   - Github
-cover: /images/post/hexo.jpg
+cover: /images/category/hexo.jpeg
 abbrlink: 2231850037
 date: 2020-04-16 11:54:14
 ---

@@ -3,7 +3,7 @@ title: Hexo搭建博客：如何使用Hexo写作
 categories: 博客
 tags:
   - Hexo
-index_img: /img/hexo.jpeg
+cover: /images/category/hexo.jpeg
 abbrlink: 3878378061
 ---
 

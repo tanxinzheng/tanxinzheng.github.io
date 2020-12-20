@@ -2,7 +2,7 @@
 title: Linux之SSH免密登录
 abbrlink: 2578104319
 date: 2017-08-18 17:59:25
-index_img: /img/linux.jpeg
+cover: /images/category/linux.jpeg
 tags: 
   - Linux
 ---

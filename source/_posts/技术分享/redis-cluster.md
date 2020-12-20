@@ -6,6 +6,7 @@ tags:
   - docker
   - docker-compose
 abbrlink: 41928529
+cover: /images/category/redis.jpg
 date: 2020-12-10 16:33:34
 ---
 

@@ -1,11 +1,28 @@
 ---
 title: Markdown导出带目录的html文件
 categories: 
-	- 技术实践
+  - 技术实践
 tags:
-	- Markdown
+  - Markdown
 abbrlink: 3058308324
 date: 2017-10-15 12:10:23
+keywords:
+description:
+top_img: 
+comments:
+cover: /images/category/markdown.png
+toc:
+toc_number: true
+copyright:
+copyright_author:
+copyright_author_href:
+copyright_url:
+copyright_info:
+mathjax:
+katex:
+aplayer:
+highlight_shrink:
+aside:
 ---
 
 ## 安装插件

@@ -4,7 +4,7 @@ categories: 博客
 tags:
   - Hexo
   - NexT
-index_img: /img/hexo.jpeg
+cover: /images/category/hexo.jpeg
 description: 在这篇文章中，你将学习到如何搭建Hexo博客以及如何使用NexT主题美化博客
 abbrlink: 3878378062
 ---

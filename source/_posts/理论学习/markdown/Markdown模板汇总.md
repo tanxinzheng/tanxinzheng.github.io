@@ -6,6 +6,7 @@ tags:
 	- Markdown
 description: 在这篇Markdown文章中，你讲学习到Markdown的各类语法及展示效果
 abbrlink: 3058308323
+cover: /images/category/markdown.png
 date: 2017-03-15 14:10:23
 ---
 

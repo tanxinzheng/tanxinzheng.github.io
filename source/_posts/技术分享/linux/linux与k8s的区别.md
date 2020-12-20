@@ -2,7 +2,7 @@
 title: linux与k8s的区别
 abbrlink: 2578104314
 date: 2017-08-18 17:59:25
-index_img: ./img/docker.png
+cover: /images/category/linux.jpeg
 tags: 
   - Docker
 ---
