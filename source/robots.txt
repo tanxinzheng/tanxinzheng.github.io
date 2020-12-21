@@ -1,0 +1,18 @@
+# robots.txt generated at http://tool.chinaz.com/robots/ 
+User-agent: *
+Allow: /
+Allow: /home/
+Allow: /posts/
+Allow: /archives/
+Allow: /tags/
+Allow: /categories/
+Allow: /links/
+Allow: /about/
+Allow: /books/
+Allow: /movies/
+Allow: /page/
+Disallow: /js/
+Disallow: /css/
+Disallow: /images/
+Disallow: /img/
+Sitemap: https://www.tanxz.com/sitemap.xml

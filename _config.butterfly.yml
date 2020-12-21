@@ -446,7 +446,7 @@ baidu_site_verification:
 
 # 360 Webmaster tools verification setting
 # see http://zhanzhang.so.com/
-qihu_site_verification:
+qihu_site_verification: ea0d59f6be5a616851c2d2d5e7f267e9
 
 # Yandex Webmaster tools verification setting
 # see https://webmaster.yandex.com/

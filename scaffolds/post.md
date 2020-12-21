@@ -28,8 +28,6 @@ keywords:
     - butterfly
     - 博客
     - blog
-    - 程序员
-    - it
 description:
 top_img: /images/post/default_top_img.jpg
 comments:
@@ -47,6 +45,3 @@ aplayer:
 highlight_shrink:
 aside:
 ---
-
-# 前言
-
