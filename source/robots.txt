@@ -16,3 +16,4 @@ Disallow: /css/
 Disallow: /images/
 Disallow: /img/
 Sitemap: https://www.tanxz.com/sitemap.xml
+Sitemap: https://www.tanxz.com/baidusitemap.xml
