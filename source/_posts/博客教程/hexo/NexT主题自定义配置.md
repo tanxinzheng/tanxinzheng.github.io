@@ -1,10 +1,12 @@
 ---
 title: Hexo搭建博客：NexT主题配置
-categories: 博客
+categories: 
+  - 博客教程
 tags:
   - Hexo
   - NexT
 cover: /images/category/hexo.jpeg
+top_img: /images/post/default_top_img.jpg
 description: 在这篇文章中，你将学习到如何搭建Hexo博客以及如何使用NexT主题美化博客
 abbrlink: 3878378062
 ---

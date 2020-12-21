@@ -1,11 +1,12 @@
 ---
 title: Hexo搭建博客：基于Github Action工作流自动部署Hexo
 categories: 
-	- 技术研究
+	- 技术实践
 tags:
   - Hexo
   - Github
 cover: /images/category/hexo.jpeg
+top_img: /images/post/default_top_img.jpg
 abbrlink: 2231850037
 date: 2020-04-16 11:54:14
 ---

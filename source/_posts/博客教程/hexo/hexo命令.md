@@ -1,9 +1,11 @@
 ---
 title: Hexo搭建博客：Hexo常用命令
-categories: 博客
+categories: 
+  - 博客教程
 tags:
   - Hexo
 cover: /images/category/hexo.jpeg
+top_img: /images/post/default_top_img.jpg
 abbrlink: 2628717197
 ---
 

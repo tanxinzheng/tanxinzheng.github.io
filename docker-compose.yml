@@ -1,0 +1,14 @@
+version: "3"
+services:
+   tanxz-blog:
+     #定义主机名
+     container_name: tanxz-blog
+     #使用的镜像
+     image: nginx:1.16.1
+     #容器的映射端口
+     ports:
+       - 4009:80
+     #定义挂载点         
+     volumes:
+       - ./public:/usr/share/nginx/html
+    #  restart: always

@@ -1,10 +1,12 @@
 ---
 title: kafka入门教程[一]
-categories: 技术
+categories: 
+  	- 技术实践
 tags:
 	- Kafka
 abbrlink: 1125805293
 cover: /images/category/kafka.jpg
+top_img: /images/post/default_top_img.jpg
 date: 2018-04-10 21:38:18
 ---
 

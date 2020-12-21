@@ -6,9 +6,9 @@ tags:
 categories:
     - 业务领域
     ## 业务领域相关的博客
-    - 解决方案
+    - 疑难杂症
     ## 关于某个问题的解决方案
-    - 技术研究
+    - 技术实践
     ## 某技术的实践
     - 技术应用
     ## 某技术的具体应用
@@ -21,8 +21,17 @@ categories:
     - 杂七杂八
     ## 生活日常
 keywords:
+    - java
+    - tanxz博客
+    - tanxz blog
+    - hexo
+    - butterfly
+    - 博客
+    - blog
+    - 程序员
+    - it
 description:
-top_img:
+top_img: /images/post/default_top_img.jpg
 comments:
 cover: 
 toc:

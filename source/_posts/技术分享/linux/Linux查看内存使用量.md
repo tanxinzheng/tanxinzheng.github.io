@@ -4,6 +4,7 @@ abbrlink: 1026478353
 tags:
 	- Linux
 cover: /images/category/linux.jpeg
+top_img: /images/post/default_top_img.jpg
 ---
 
 > 有一些命令可以用来检查 Linux 系统中的内存使用情况，下面是一些更好的命令。

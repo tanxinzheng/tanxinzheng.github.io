@@ -8,6 +8,7 @@ tags:
 	- Mac
 date: 2018-12-07
 cover: /images/category/macos.png
+top_img: /images/post/default_top_img.jpg
 ---
 
 #### 安装

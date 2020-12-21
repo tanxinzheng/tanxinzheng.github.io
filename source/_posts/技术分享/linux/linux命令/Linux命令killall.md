@@ -2,6 +2,7 @@
 title: Linux命令killall
 abbrlink: 1026478353
 cover: /images/category/linux.jpeg
+top_img: /images/post/default_top_img.jpg
 ---
 
 # Linux命令killall

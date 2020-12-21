@@ -1,12 +1,14 @@
 ---
 title: Mac使用openssl生成pem证书
-categories: 技术
+categories: 
+  	- 技术实践
 tags:
 	- RAS
 	- Mac
 date: 2018-12-07
 abbrlink: 250724270
 cover: /images/category/macos.png
+top_img: /images/post/default_top_img.jpg
 ---
 
 # 参考资料

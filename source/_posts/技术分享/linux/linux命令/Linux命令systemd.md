@@ -2,6 +2,7 @@
 title: Linux命令systemd
 abbrlink: 1026478354
 cover: /images/category/linux.jpeg
+top_img: /images/post/default_top_img.jpg
 tags:
 	- Linux
 	- Centos

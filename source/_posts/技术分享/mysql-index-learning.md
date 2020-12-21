@@ -4,6 +4,7 @@ tags:
   - MySQL
 abbrlink: 780159822
 cover: /images/category/mysql.png
+top_img: /images/post/default_top_img.jpg
 date: 2018-07-19 21:38:18
 ---
 

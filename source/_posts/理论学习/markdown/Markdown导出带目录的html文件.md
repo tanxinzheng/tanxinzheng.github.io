@@ -8,7 +8,7 @@ abbrlink: 3058308324
 date: 2017-10-15 12:10:23
 keywords:
 description:
-top_img: 
+top_img: /images/post/default_top_img.jpg
 comments:
 cover: /images/category/markdown.png
 toc:

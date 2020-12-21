@@ -7,6 +7,7 @@ tags:
   - Spring Cloud
   - Java
 cover: /images/post/1879991184/thumbnail.jpeg
+top_img: /images/post/default_top_img.jpg
 # 文章缩略图
 abbrlink: 1879991184
 date: 2016-08-16 00:04:12

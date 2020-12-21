@@ -1,11 +1,13 @@
 ---
 title: 如何申请SSL免费证书
-categories: 技术
+categories: 
+  	- 技术实践
 tags:
 	- https
 	- ssl
 abbrlink: 1125805289
 cover: /images/category/https.jpg
+top_img: /images/post/default_top_img.jpg
 date: 2020-12-10 21:38:18
 ---
 
