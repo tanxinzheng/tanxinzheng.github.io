@@ -8,32 +8,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout source
+      - name: 1. 安装checkout source
         uses: actions/checkout@v1
         with:
           ref: theme-butterfly
-      - name: Use Node.js 12.0.0
+      - name: 2. 安装Node.js 12.0.0
         uses: actions/setup-node@v1
         with:
           version: 12.0.0
-      - name: set github ssh key && npm install 
-        env:
-          ACTION_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_PRI }}
+      - name: 3. 下载npm依赖包
         run: |
-          mkdir -p ~/.ssh/
-          echo "$ACTION_DEPLOY_KEY" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan github.com >> ~/.ssh/known_hosts
-          git config --global user.email "tanxinzheng@139.com"
-          git config --global user.name "tanxinzheng"
           npm install hexo-cli -g
           npm install
-      - name: build hexo 
+      - name: 4. 打包hexo静态资源包
         run: |
           hexo clean
-          # 此处hexo generate换成使用gulp对静态资源进行压缩
           gulp build
-      - uses: manyuanrong/setup-ossutil@v1.0
+      - name: 5. 安装ossutil
+        uses: manyuanrong/setup-ossutil@v1.0
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
@@ -42,5 +34,5 @@ jobs:
            # 使用我们之前配置在secrets里面的accesskeys来配置ossutil
            access-key-id: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_ID }}
            access-key-secret: ${{ secrets.ALIYUN_OSS_ACCESS_KEY_SECRET }}
-      - name: deploy to OSS
+      - name: 6. 部署站点静态资源到OSS
         run: ossutil cp public oss://txz-blog/ -r -f -u

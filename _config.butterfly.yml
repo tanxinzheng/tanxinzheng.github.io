@@ -16,7 +16,7 @@ menu:
     - 音乐 || https://music.163.com/#/user/home?id=443074688 || fas fa-music
     - 电影 || /movies/ || fas fa-video
   友链: /links/ || fas fa-link
-  导航站: https://box.tanxz.com/index.html
+  导航: https://box.tanxz.com/ || fas fa-compass
   关于: /about/ || fas fa-heart
   飞一下: https://travellings.now.sh/ || fas fa-paper-plane
 
@@ -439,7 +439,7 @@ google_site_verification:
 
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
-bing_site_verification: https://tanxz.com/BingSiteAuth.xml
+bing_site_verification: F8AC388E5B95102212EBA2D2FE5B00FD
 
 # Baidu Webmaster tools verification setting
 # See: https://ziyuan.baidu.com/site/
