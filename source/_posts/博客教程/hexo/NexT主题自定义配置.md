@@ -9,8 +9,8 @@ keywords:
   - hexo
   - next主题
   - next theme
-cover: /images/category/hexo.jpeg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/hexo.jpeg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 description: 在这篇文章中，你将学习到如何搭建Hexo博客以及如何使用NexT主题美化博客
 abbrlink: 3878378062
 ---

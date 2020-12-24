@@ -5,8 +5,8 @@ categories:
 tags:
 	- Kafka
 abbrlink: 1125805293
-cover: /images/category/kafka.jpg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/kafka.jpg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 date: 2018-04-10 21:38:18
 ---
 

@@ -7,8 +7,8 @@ tags:
 	- mac
 	- node
 description: 
-cover: /images/category/macos.png
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/macos.png
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 ---
 
 #### 第一步：使用npm安装n模块

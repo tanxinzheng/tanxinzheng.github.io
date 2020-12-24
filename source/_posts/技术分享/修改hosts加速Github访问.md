@@ -14,9 +14,9 @@ keywords:
   - github加速
   - python
 description:
-top_img: /images/post/default_top_img.jpg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 comments:
-cover: /images/category/github-office.jpg
+cover: https://cdn.tanxz.com/images/category/github-office.jpg
 toc:
 toc_number:
 copyright:

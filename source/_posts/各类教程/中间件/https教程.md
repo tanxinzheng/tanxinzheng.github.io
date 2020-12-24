@@ -6,8 +6,8 @@ tags:
 	- https
 	- ssl
 abbrlink: 1125805289
-cover: /images/category/https.jpg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/https.jpg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 date: 2020-12-10 21:38:18
 ---
 

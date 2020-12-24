@@ -3,8 +3,8 @@ title: 【MySQL】索引及分页详解
 tags:
   - MySQL
 abbrlink: 780159822
-cover: /images/category/mysql.png
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/mysql.png
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 date: 2018-07-19 21:38:18
 ---
 

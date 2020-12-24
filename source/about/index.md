@@ -2,7 +2,7 @@
 title: 关于 | About Me
 date: 2018-04-16 13:01:39
 type: about
-top_img: /images/banner/about.jpg
+top_img: https://cdn.tanxz.com/images/banner/about.jpg
 ---
 
 # 关于博主

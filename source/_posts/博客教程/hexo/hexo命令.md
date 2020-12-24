@@ -4,8 +4,8 @@ categories:
   - 博客教程
 tags:
   - Hexo
-cover: /images/category/hexo.jpeg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/hexo.jpeg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 abbrlink: 2628717197
 ---
 

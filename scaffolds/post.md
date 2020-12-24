@@ -29,7 +29,7 @@ keywords:
     - 博客
     - blog
 description:
-top_img: /images/post/default_top_img.jpg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 comments:
 cover: 
 toc:

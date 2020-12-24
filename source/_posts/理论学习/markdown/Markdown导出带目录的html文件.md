@@ -8,9 +8,9 @@ abbrlink: 3058308324
 date: 2017-10-15 12:10:23
 keywords:
 description:
-top_img: /images/post/default_top_img.jpg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 comments:
-cover: /images/category/markdown.png
+cover: https://cdn.tanxz.com/images/category/markdown.png
 toc:
 toc_number: true
 copyright:
