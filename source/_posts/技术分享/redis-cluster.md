@@ -6,8 +6,8 @@ tags:
   - docker
   - docker-compose
 abbrlink: 41928529
-cover: /images/category/redis.jpg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/redis.jpg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 date: 2020-12-10 16:33:34
 ---
 

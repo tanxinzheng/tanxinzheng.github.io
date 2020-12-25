@@ -5,8 +5,8 @@ categories:
 tags:
   - Hexo
   - Github
-cover: /images/category/hexo.jpeg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/hexo.jpeg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 abbrlink: 2231850037
 date: 2020-04-16 11:54:14
 ---

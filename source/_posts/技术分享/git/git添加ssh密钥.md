@@ -5,8 +5,8 @@ tags:
 categories:
   - 技术分享
 abbrlink: 41928510
-cover: /images/category/git-logo.jpg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/git-logo.jpg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 date: 2020-12-10 22:33:34
 ---
 

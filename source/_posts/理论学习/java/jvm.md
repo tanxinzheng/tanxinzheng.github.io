@@ -2,8 +2,8 @@
 title: JVM【性能调优篇】
 tags:
   - Java
-cover: /images/category/java.jpeg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/java.jpeg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 abbrlink: 3097382278
 date: 2016-10-16 11:54:14
 

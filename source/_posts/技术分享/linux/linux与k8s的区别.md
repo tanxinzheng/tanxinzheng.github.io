@@ -2,8 +2,8 @@
 title: linux与k8s的区别
 abbrlink: 2578104314
 date: 2017-08-18 17:59:25
-cover: /images/category/linux.jpeg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/linux.jpeg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 tags: 
   - Docker
 ---

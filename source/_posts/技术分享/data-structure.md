@@ -10,7 +10,7 @@ categories:
     ## 理论知识的分享及学习
 keywords:
 description:
-top_img: /images/post/default_top_img.jpg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 comments:
 cover: /images/post/2827031203/cover.png
 toc:

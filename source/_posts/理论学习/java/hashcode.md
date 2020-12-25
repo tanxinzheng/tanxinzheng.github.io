@@ -4,8 +4,8 @@ tags:
   - Java
 abbrlink: 2936205123
 date: 2019-10-10 10:12:00
-cover: /images/category/java.jpeg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/java.jpeg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 ---
 ## 一、hashcode是什么
 要理解hashcode首先要理解hash表这个概念

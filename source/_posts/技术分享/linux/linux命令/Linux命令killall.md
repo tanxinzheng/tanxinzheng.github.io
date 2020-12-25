@@ -1,8 +1,8 @@
 ---
 title: Linux命令killall
 abbrlink: 1026478353
-cover: /images/category/linux.jpeg
-top_img: /images/post/default_top_img.jpg
+cover: https://cdn.tanxz.com/images/category/linux.jpeg
+top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 ---
 
 # Linux命令killall
