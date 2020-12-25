@@ -1,5 +1,7 @@
 ---
 title: 【MySQL】索引及分页详解
+categories:
+  - 技术分享
 tags:
   - MySQL
 abbrlink: 780159822
