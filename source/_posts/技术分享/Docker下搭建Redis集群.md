@@ -1,5 +1,7 @@
 ---
 title: Docker之Redis Cluster搭建
+categories:
+  - 技术实践
 tags:
   - redis
   - cluster
@@ -8,7 +10,7 @@ tags:
 abbrlink: 41928529
 cover: https://cdn.tanxz.com/images/category/redis.jpg
 top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
-date: 2020-12-10 16:33:34
+date: 2019-03-10 19:33:34
 ---
 
 ## 环境
