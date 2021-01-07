@@ -7,6 +7,7 @@ tags:
 cover: https://cdn.tanxz.com/images/category/hexo.jpeg
 top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 abbrlink: 3878378061
+date: 2016-11-21 18:24:10
 ---
 
 > 这篇文章将讲解如果使用hexo命令生成页面、文章及如何配置文章模板等操作。

@@ -7,6 +7,7 @@ tags:
 cover: https://cdn.tanxz.com/images/category/hexo.jpeg
 top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 abbrlink: 2628717197
+date: 2016-10-09 19:24:10
 ---
 
 > 本文章将讲解在搭建Hexo博客过程中的常用命令及命令的参数说明
