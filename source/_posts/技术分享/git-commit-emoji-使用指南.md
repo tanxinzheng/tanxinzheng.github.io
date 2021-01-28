@@ -20,7 +20,7 @@ updated:
 tags:
 description:
 comments:
-cover:
+cover: https://cdn.tanxz.com/images/post/20201226164703.jpeg
 toc:
 copyright:
 copyright_author:

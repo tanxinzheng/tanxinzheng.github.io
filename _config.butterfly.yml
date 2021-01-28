@@ -576,12 +576,12 @@ font:
   global-font-size:
   code-font-size: 
   font-family:
-  code-font-family: https://fonts.googleapis.com/css?family=EB+Garamond
+  code-font-family: https://fonts.font.im/css?family=EB+Garamond
 
 # Font settings for the site title and site subtitle
 # 左上角網站名字 主頁居中網站名字
 blog_title_font:
-  font_link: https://fonts.googleapis.com/css?family=Dancing+Script
+  font_link: https://fonts.font.im/css?family=Dancing+Script
   font-family: Dancing Script, cursive
 
 # The setting of divider icon (水平分隔線圖標設置)
