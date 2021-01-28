@@ -15,6 +15,7 @@ menu:
     - 阅读 || /books/ || fas fa-book
     - 音乐 || https://music.163.com/#/user/home?id=443074688 || fas fa-music
     - 电影 || /movies/ || fas fa-video
+  留言: /comments/ || fas fa-comment
   友链: /links/ || fas fa-link
   导航: https://box.tanxz.com/ || fas fa-compass
   关于: /about/ || fas fa-heart
@@ -297,7 +298,7 @@ valine:
   appId: sjH6KrDKBGoivzr60dHpe1k3-gzGzoHsz
   appKey: M6dsbJ26b4Cpl3ioltpbr3BN
   pageSize: 10 # comment list page size
-  avatar: monsterid # gravatar style https://valine.js.org/#/avatar
+  avatar: wavatar # gravatar style https://valine.js.org/#/avatar
   lang: zh-CN # i18n: zh-CN/zh-TW/en/ja
   placeholder: 请留下您的宝贵建议！😘 # valine comment input placeholder (like: Please leave your footprints)
   guest_info: nick,mail,link # valine comment header info (nick/mail/link)
@@ -671,15 +672,15 @@ runtimeshow:
 
 # Aside widget - Newest Comments
 newest_comments:
-  enable: false
+  enable: true
   limit: 6
   avatar: true
   leancloud:
-    enable: false
-    appId: # leancloud application app id
-    appKey: # leancloud application app key
-    serverURL: # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
-    default_avatar: # mp/identicon/monsterid/wavatar/retro/robohash/blank
+    enable: true
+    appId: sjH6KrDKBGoivzr60dHpe1k3-gzGzoHsz # leancloud application app id
+    appKey: M6dsbJ26b4Cpl3ioltpbr3BN # leancloud application app key
+    serverURL: https://leancloud.api.tanxz.com # This configuration is suitable for domestic custom domain name users, overseas version will be automatically detected (no need to manually fill in)
+    default_avatar: wavatar # mp/identicon/monsterid/wavatar/retro/robohash/blank
   github_issues:
     enable: false
     repo:

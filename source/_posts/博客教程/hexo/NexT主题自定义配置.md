@@ -13,6 +13,7 @@ cover: https://cdn.tanxz.com/images/category/hexo.jpeg
 top_img: https://cdn.tanxz.com/images/post/default_top_img.jpg
 description: 在这篇文章中，你将学习到如何搭建Hexo博客以及如何使用NexT主题美化博客
 abbrlink: 3878378062
+date: 2016-10-13 19:20:10
 ---
 
 # 1. 前言
